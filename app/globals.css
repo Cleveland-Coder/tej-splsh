@@ -2,32 +2,261 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+/* custom styles */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #9a7f62;
+  fill: #9a7f62;
+  font-family: var(--font-lato), Helvetica, Verdana, sans-serif;
+  font-weight: 300;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+#header,
+#main,
+#footer {
+  width: 100%;
+  margin: 24px auto;
+  padding: 0 12px;
+}
+
+#header,
+#main {
+  max-width: 500px;
+}
+
+#footer {
+  max-width: 300px;
+}
+
+@media screen and (max-width: 728px) {
+  #header,
+  #main,
+  #footer {
+    margin: 12px auto;
   }
+}
+
+/* header */
+.logo {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 16px;
+  fill: inherit;
+}
+
+/* footer */
+#footer {
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+/* social icons */
+.list-social {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-social a {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-size: 45px;
+  line-height: 1;
+  text-decoration: none;
+}
+[title="twitter"]:hover {
+  color: #55acee;
+}
+[title="facebook"]:hover {
+  color: #3b5998;
+}
+[title="instagram"]:hover {
+  color: #3f729b;
+}
+[title="pinterest"]:hover {
+  color: #cc2127;
+}
+
+/* buttons */
+.btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  padding: 11px 0;
+  color: white;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #9a7f62;
+
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.btn:hover {
+  background-color: #5d4c38;
+}
+.btn:not(:first-child) {
+  margin-top: 12px;
+}
+
+.flag {
+  padding: 12px 8px;
+  margin-top: 12px;
+  background-color: #9a7f62;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
 }
