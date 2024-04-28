@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const lato = Lato({
@@ -154,7 +155,7 @@ export default function RootLayout({
             </li>
           </ul>
         </footer>
-        <script src="https://use.fontawesome.com/f6e0e51e9b.js"></script>
+        <Script src="https://use.fontawesome.com/f6e0e51e9b.js"></Script>
       </body>
     </html>
   );
