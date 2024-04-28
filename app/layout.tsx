@@ -58,11 +58,6 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9a7f62" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <link
-          id="styles-normalize"
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css"
-        />
         <base target="_blank" />
       </head>
 
