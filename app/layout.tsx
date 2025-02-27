@@ -13,7 +13,8 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Tiny Erica Jewelry",
-  description: "Tiny Erica Jewelry features hand-made jewelery and custom jewelery design that integrates elements of nature into a fresh, clean aesthetic",
+  description:
+    "Tiny Erica Jewelry features hand-made jewelery and custom jewelery design that integrates elements of nature into a fresh, clean aesthetic",
 };
 
 export default function RootLayout({
