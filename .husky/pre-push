@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running format check..."
+pnpm format:check || exit 1
+
+echo "🔍 Running lint check..."
+pnpm lint || exit 1 
