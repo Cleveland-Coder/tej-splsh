@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
-import Image from 'next/image';
+import Logo from './components/Logo';
 import Script from 'next/script';
 import './globals.css';
 
@@ -46,13 +46,7 @@ export default function RootLayout({
 
       <body className={lato.variable}>
         <header id="header">
-          <Image
-            src="/logo.svg"
-            width={141.31}
-            height={159.53}
-            alt="Tiny Erica Jewelry Logo"
-            className="logo"
-          />
+          <Logo />
         </header>
         {children}
         <footer id="footer">
