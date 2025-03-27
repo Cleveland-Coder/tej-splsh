@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css";
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -125,7 +123,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -217,16 +215,16 @@ a {
   line-height: 1;
   text-decoration: none;
 }
-[title="twitter"]:hover {
+[title='twitter']:hover {
   color: #55acee;
 }
-[title="facebook"]:hover {
+[title='facebook']:hover {
   color: #3b5998;
 }
-[title="instagram"]:hover {
+[title='instagram']:hover {
   color: #3f729b;
 }
-[title="pinterest"]:hover {
+[title='pinterest']:hover {
   color: #cc2127;
 }
 

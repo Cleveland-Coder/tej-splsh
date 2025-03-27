@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import { Lato } from "next/font/google";
-import Image from "next/image";
-import Script from "next/script";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Lato } from 'next/font/google';
+import Image from 'next/image';
+import Script from 'next/script';
+import './globals.css';
 
 const lato = Lato({
-  weight: ["100", "300"],
-  subsets: ["latin"],
-  variable: "--font-lato",
-  display: "swap",
+  weight: ['100', '300'],
+  subsets: ['latin'],
+  variable: '--font-lato',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Tiny Erica Jewelry",
+  title: 'Tiny Erica Jewelry',
   description:
-    "Tiny Erica Jewelry features hand-made jewelery and custom jewelery design that integrates elements of nature into a fresh, clean aesthetic",
+    'Tiny Erica Jewelry features hand-made jewelery and custom jewelery design that integrates elements of nature into a fresh, clean aesthetic',
 };
 
 export default function RootLayout({
@@ -34,23 +34,9 @@ export default function RootLayout({
         <meta name="copyright" content="Tiny Erica Jewelry" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="http://tinyerica.com" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9a7f62" />
         <meta name="msapplication-TileColor" content="#da532c" />
