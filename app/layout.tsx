@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
-import Image from 'next/image';
+import Logo from './components/Logo';
 import Script from 'next/script';
 import './globals.css';
 
@@ -14,7 +14,7 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: 'Tiny Erica Jewelry',
   description:
-    'Tiny Erica Jewelry features hand-made jewelery and custom jewelery design that integrates elements of nature into a fresh, clean aesthetic',
+    'Tiny Erica Jewelry features hand-made jewelry and custom jewelry design that integrates elements of nature into a fresh, clean aesthetic',
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta
           name="keywords"
-          content="tiny erica, jewelry, jewelery design, custom, hand-made, silver, rings, charms, gems"
+          content="tiny erica, jewelry, jewelry design, custom, hand-made, silver, rings, charms, gems"
         />
         <meta name="author" content="Raúl Montejo" />
         <meta name="copyright" content="Tiny Erica Jewelry" />
@@ -46,13 +46,7 @@ export default function RootLayout({
 
       <body className={lato.variable}>
         <header id="header">
-          <Image
-            src="/logo.svg"
-            width={141.31}
-            height={159.53}
-            alt="Tiny Erica Jewelry Logo"
-            className="logo"
-          />
+          <Logo />
         </header>
         {children}
         <footer id="footer">
