@@ -5,10 +5,14 @@ export default function Logo() {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 309.26 349.16"
+      width="309.26"
+      height="349.16"
       aria-label="Tiny Erica Jewelry Logo"
       role="img"
       className="logo"
+      fill="currentColor"
     >
+      <title>Tiny Erica Jewelry Logo</title>
       <path d="M95.56,172.42v1.38h-8v20.06h-1.68V173.8h-8v-1.38H95.56z" />
       <path d="M99.81,172.42v21.44h-1.66v-21.44H99.81z" />
       <path d="M124.02,172.42v21.44h-1.37l-16.3-18.74v18.74h-1.66v-21.44h1.41l16.26,18.74v-18.74H124.02z" />
