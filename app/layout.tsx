@@ -25,14 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en-US">
       <head>
-        <meta charSet="UTF-8" />
         <meta
           name="keywords"
           content="tiny erica, jewelry, jewelry design, custom, hand-made, silver, rings, charms, gems"
         />
         <meta name="author" content="Raúl Montejo" />
         <meta name="copyright" content="Tiny Erica Jewelry" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="http://tinyerica.com" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -41,7 +39,6 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9a7f62" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <base target="_blank" />
       </head>
 
       <body className={lato.variable}>
