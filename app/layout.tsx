@@ -62,7 +62,7 @@ export default function RootLayout({
         <header>
           <Logo />
         </header>
-        {children}
+        <main>{children}</main>
         <footer>
           <ul className="list-social">
             <li>
