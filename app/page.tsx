@@ -1,4 +1,4 @@
-export default function Home() {
+function Home() {
   return (
     <div>
       <a className="btn" href="//www.etsy.com/shop/TinyErica">
@@ -10,3 +10,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
