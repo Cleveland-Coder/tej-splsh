@@ -161,27 +161,27 @@ a {
   text-decoration: underline;
 }
 
-#header,
-#main,
-#footer {
+header,
+main,
+footer {
   width: 100%;
   margin: 24px auto;
   padding: 0 12px;
 }
 
-#header,
-#main {
+header,
+main {
   max-width: 500px;
 }
 
-#footer {
+footer {
   max-width: 300px;
 }
 
 @media screen and (max-width: 728px) {
-  #header,
-  #main,
-  #footer {
+  header,
+  main,
+  footer {
     margin: 12px auto;
   }
 }
@@ -195,7 +195,7 @@ a {
 }
 
 /* footer */
-#footer {
+footer {
   letter-spacing: 1px;
   width: 100%;
 }

@@ -59,11 +59,11 @@ export default function RootLayout({
   return (
     <html lang="en-US">
       <body className={lato.variable}>
-        <header id="header">
+        <header>
           <Logo />
         </header>
         {children}
-        <footer id="footer">
+        <footer>
           <ul className="list-social">
             <li>
               <a href="//instagram.com/tinyerica" title="instagram">

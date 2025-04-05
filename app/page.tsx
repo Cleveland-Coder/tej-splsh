@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <main id="main">
+    <main>
       <a className="btn" href="//www.etsy.com/shop/TinyErica">
         Shop
       </a>
