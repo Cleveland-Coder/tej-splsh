@@ -1,19 +1,9 @@
-import Link from 'next/link';
+import ActionLinkList from './components/ActionLinkList';
 
 function Home() {
   return (
     <div>
-      <Link
-        className="btn"
-        href="//www.etsy.com/shop/TinyErica"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Shop
-      </Link>
-      <Link className="btn" href="mailto:hello@tinyerica.com">
-        Email
-      </Link>
+      <ActionLinkList />
     </div>
   );
 }
