@@ -16,9 +16,4 @@ export const SOCIAL_LINKS: SocialLinkProps[] = [
     iconClass: 'fa fa-pinterest-square',
     title: 'pinterest',
   },
-  {
-    href: '//twitter.com/tinyerica',
-    iconClass: 'fa fa-twitter-square',
-    title: 'twitter',
-  },
 ];

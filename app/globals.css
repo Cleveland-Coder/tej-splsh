@@ -198,9 +198,6 @@ a {
   line-height: 1;
   text-decoration: none;
 }
-[title='twitter']:hover {
-  color: #55acee;
-}
 [title='facebook']:hover {
   color: #3b5998;
 }
