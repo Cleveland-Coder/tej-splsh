@@ -4,6 +4,7 @@ import Script from 'next/script';
 // Internal components
 import Logo from '../components/Logo';
 import SocialLinkList from '../components/SocialLinkList';
+import Container from '../components/Container';
 
 // Internal utilities and config
 import { lato } from '../config/fonts';
@@ -19,12 +20,14 @@ function RootLayout({
   return (
     <html lang="en-US">
       <body className={lato.variable}>
-        <header>
+        <header className="mb-4">
           <Logo />
         </header>
         <main>{children}</main>
         <footer>
-          <SocialLinkList />
+          <Container>
+            <SocialLinkList />
+          </Container>
         </footer>
         <Script src={FONT_AWESOME_SCRIPT_URL}></Script>
       </body>
