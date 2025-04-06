@@ -3,13 +3,14 @@ import { SocialLinkProps } from './types';
 
 // Internal constants
 import { SOCIAL_LINKS } from './constants';
+import Link from 'next/link';
 
 function SocialLink({ href, title, iconClass }: SocialLinkProps) {
   return (
     <li>
-      <a href={href} title={title}>
+      <Link href={href} title={title} target="_blank" rel="noopener noreferrer">
         <span className={`icon-social fa ${iconClass}`}></span>
-      </a>
+      </Link>
     </li>
   );
 }

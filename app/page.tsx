@@ -1,12 +1,19 @@
+import Link from 'next/link';
+
 function Home() {
   return (
     <div>
-      <a className="btn" href="//www.etsy.com/shop/TinyErica">
+      <Link
+        className="btn"
+        href="//www.etsy.com/shop/TinyErica"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Shop
-      </a>
-      <a className="btn" href="mailto:hello@tinyerica.com">
+      </Link>
+      <Link className="btn" href="mailto:hello@tinyerica.com">
         Email
-      </a>
+      </Link>
     </div>
   );
 }
