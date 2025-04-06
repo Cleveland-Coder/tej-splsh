@@ -185,7 +185,7 @@ a {
 /* social icons */
 .list-social {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   list-style-type: none;
   padding: 0;
 }
@@ -193,6 +193,7 @@ a {
 .list-social a {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  padding: 0 16px;
   font-size: 45px;
   line-height: 1;
   text-decoration: none;
