@@ -161,27 +161,15 @@ a {
   text-decoration: underline;
 }
 
-header,
-main,
-footer {
+.container {
   width: 100%;
   margin: 24px auto;
   padding: 0 12px;
-}
-
-header,
-main {
-  max-width: 500px;
-}
-
-footer {
-  max-width: 300px;
+  max-width: 360px;
 }
 
 @media screen and (max-width: 728px) {
-  header,
-  main,
-  footer {
+  .container {
     margin: 12px auto;
   }
 }
@@ -192,12 +180,6 @@ footer {
   width: 100%;
   padding: 0 16px;
   fill: inherit;
-}
-
-/* footer */
-footer {
-  letter-spacing: 1px;
-  width: 100%;
 }
 
 /* social icons */

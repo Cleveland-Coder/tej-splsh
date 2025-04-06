@@ -1,10 +1,11 @@
 import ActionLinkList from './components/ActionLinkList';
+import Container from './components/Container';
 
 function Home() {
   return (
-    <div>
+    <Container>
       <ActionLinkList />
-    </div>
+    </Container>
   );
 }
 
