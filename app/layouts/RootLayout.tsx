@@ -8,6 +8,9 @@ import SocialLinkList from '../components/SocialLinkList';
 // Internal utilities and config
 import { lato } from '../config/fonts';
 
+// Internal constants
+import { FONT_AWESOME_SCRIPT_URL } from '../constants';
+
 function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +26,7 @@ function RootLayout({
         <footer>
           <SocialLinkList />
         </footer>
-        <Script src="https://use.fontawesome.com/f6e0e51e9b.js"></Script>
+        <Script src={FONT_AWESOME_SCRIPT_URL}></Script>
       </body>
     </html>
   );
