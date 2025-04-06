@@ -25,7 +25,7 @@
     ]
   },
   "dependencies": {
-    "next": "15.2.2",
+    "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -35,7 +35,7 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.22.0",
-    "eslint-config-next": "15.2.2",
+    "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^10.0.2",
     "eslint-plugin-prettier": "^5.2.3",
     "husky": "^9.1.7",
