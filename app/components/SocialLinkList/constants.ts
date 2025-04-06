@@ -8,12 +8,12 @@ export const SOCIAL_LINKS: SocialLinkProps[] = [
   },
   {
     href: '//facebook.com/tinyerica',
-    iconClass: 'fa fa-facebook-square',
+    iconClass: 'fa fa-facebook',
     title: 'facebook',
   },
   {
     href: '//pinterest.com/tinyerica',
-    iconClass: 'fa fa-pinterest-square',
+    iconClass: 'fa fa-pinterest',
     title: 'pinterest',
   },
 ];
