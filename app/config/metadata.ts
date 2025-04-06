@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
+import { SITE } from '../constants/site';
+import { THEME } from '../constants/theme';
 
-const metadata: Metadata = {
-  title: 'Tiny Erica Jewelry',
-  description:
-    'Tiny Erica Jewelry features hand-made jewelry and custom jewelry design that integrates elements of nature into a fresh, clean aesthetic',
-  keywords: 'tiny erica, jewelry, jewelry design, custom, hand-made, silver, rings, charms, gems',
-  authors: [{ name: 'Raúl Montejo' }],
-  creator: 'Tiny Erica Jewelry',
-  publisher: 'Tiny Erica Jewelry',
+export const metadata: Metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  keywords: SITE.keywords.join(', '),
+  authors: [{ name: SITE.author }],
+  creator: SITE.title,
+  publisher: SITE.title,
   alternates: {
-    canonical: 'https://tinyerica.com',
+    canonical: SITE.url,
   },
   icons: {
     icon: [
@@ -21,23 +22,20 @@ const metadata: Metadata = {
       {
         rel: 'mask-icon',
         url: '/safari-pinned-tab.svg',
-        color: '#9a7f62',
+        color: THEME.colors.primary,
       },
     ],
   },
   manifest: '/site.webmanifest',
-  themeColor: '#ffffff',
+  themeColor: THEME.colors.background,
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
-    title: 'Tiny Erica Jewelry',
-    description:
-      'Tiny Erica Jewelry features hand-made jewelry and custom jewelry design that integrates elements of nature into a fresh, clean aesthetic',
-    url: 'http://tinyerica.com',
-    siteName: 'Tiny Erica Jewelry',
+    title: SITE.title,
+    description: SITE.description,
+    url: SITE.url,
+    siteName: SITE.title,
     locale: 'en_US',
     type: 'website',
   },
 };
-
-export default metadata;

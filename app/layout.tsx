@@ -2,7 +2,7 @@
 import RootLayout from './layouts/RootLayout';
 
 // Internal utilities and config
-import metadata from './config/metadata';
+import { metadata } from './config/metadata';
 
 // Styles
 import './globals.css';
