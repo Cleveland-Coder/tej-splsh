@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { SITE } from '../constants/site';
-import { THEME } from '../constants/theme';
+import { SITE } from '~constants/site';
+import { THEME } from '~constants/theme';
 
 export const metadata: Metadata = {
   title: SITE.title,

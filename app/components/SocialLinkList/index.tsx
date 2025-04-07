@@ -2,7 +2,7 @@
 import { SocialLinkProps } from './types';
 
 // Internal constants
-import { EXTERNAL_LINK_PROPS } from '../../constants';
+import { EXTERNAL_LINK_PROPS } from '~constants/index';
 import { SOCIAL_LINKS } from './constants';
 import Link from 'next/link';
 

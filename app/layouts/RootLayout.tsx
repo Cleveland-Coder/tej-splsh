@@ -2,15 +2,15 @@
 import Script from 'next/script';
 
 // Internal components
-import Logo from '../components/Logo';
-import SocialLinkList from '../components/SocialLinkList';
-import Container from '../components/Container';
+import Logo from '~components/Logo';
+import SocialLinkList from '~components/SocialLinkList';
+import Container from '~components/Container';
 
 // Internal utilities and config
-import { lato } from '../config/fonts';
+import { lato } from '~config/fonts';
 
 // Internal constants
-import { FONT_AWESOME_SCRIPT_URL } from '../constants';
+import { FONT_AWESOME_SCRIPT_URL } from '~constants/index';
 
 function RootLayout({
   children,

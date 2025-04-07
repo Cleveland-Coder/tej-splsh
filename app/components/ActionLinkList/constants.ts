@@ -2,7 +2,7 @@
 import { ActionLinkConfig } from './types';
 
 // Internal constants
-import { EXTERNAL_LINK_PROPS } from '../../constants';
+import { EXTERNAL_LINK_PROPS } from '~constants';
 
 export const ACTION_LINKS: ActionLinkConfig[] = [
   {
