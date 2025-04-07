@@ -1,19 +1,21 @@
+import { faFacebookF, faInstagram, faPinterest } from '@fortawesome/free-brands-svg-icons';
+
 import { SocialLinkProps } from './types';
 
 export const SOCIAL_LINKS: SocialLinkProps[] = [
   {
     href: '//instagram.com/tinyerica',
-    iconClass: 'fa fa-instagram',
+    icon: faInstagram,
     title: 'instagram',
   },
   {
     href: '//facebook.com/tinyerica',
-    iconClass: 'fa fa-facebook',
+    icon: faFacebookF,
     title: 'facebook',
   },
   {
     href: '//pinterest.com/tinyerica',
-    iconClass: 'fa fa-pinterest',
+    icon: faPinterest,
     title: 'pinterest',
   },
 ];
