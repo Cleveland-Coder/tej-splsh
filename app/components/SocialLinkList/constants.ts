@@ -1,5 +1,7 @@
+// External dependencies
 import { faFacebookF, faInstagram, faPinterest } from '@fortawesome/free-brands-svg-icons';
 
+// Internal types
 import { SocialLinkProps } from './types';
 
 export const SOCIAL_LINKS: SocialLinkProps[] = [
@@ -18,4 +20,4 @@ export const SOCIAL_LINKS: SocialLinkProps[] = [
     icon: faPinterest,
     title: 'pinterest',
   },
-];
+] as const;

@@ -14,4 +14,4 @@ export const ACTION_LINKS: ActionLinkConfig[] = [
     href: 'mailto:hello@tinyerica.com',
     label: 'Email',
   },
-];
+] as const;

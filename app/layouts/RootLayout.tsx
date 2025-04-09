@@ -1,7 +1,6 @@
-// Internal components
+import Container from '~components/Container';
 import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
-import Container from '~components/Container';
 
 function RootLayout({
   children,

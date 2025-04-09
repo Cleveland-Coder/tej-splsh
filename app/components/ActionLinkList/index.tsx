@@ -1,4 +1,7 @@
+// External dependencies
 import Link from 'next/link';
+
+// Internal constants
 import { ACTION_LINKS } from './constants';
 
 // Internal utilities and config

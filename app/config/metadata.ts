@@ -1,4 +1,7 @@
+// External dependencies
 import type { Metadata } from 'next';
+
+// Internal constants
 import { SITE } from '~constants/site';
 import { THEME } from '~constants/theme';
 
@@ -37,4 +40,4 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-};
+} as const;
