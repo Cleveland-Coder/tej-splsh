@@ -3,9 +3,6 @@ import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
 import Container from '~components/Container';
 
-// Internal utilities and config
-import { lato } from '~config/fonts';
-
 function RootLayout({
   children,
 }: Readonly<{
@@ -13,7 +10,7 @@ function RootLayout({
 }>) {
   return (
     <html lang="en-US">
-      <body className={lato.variable}>
+      <body>
         <header className="mb-4">
           <Logo />
         </header>

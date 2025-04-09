@@ -1,8 +1,10 @@
 import { Lato } from 'next/font/google';
 
 export const lato = Lato({
-  weight: ['100', '300'],
+  weight: '300',
   subsets: ['latin'],
-  variable: '--font-lato',
   display: 'swap',
+  variable: '--font-lato',
+  fallback: ['Helvetica', 'Verdana', 'sans-serif'],
+  preload: false,
 });
