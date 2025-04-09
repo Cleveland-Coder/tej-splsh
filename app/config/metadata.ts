@@ -1,6 +1,9 @@
+// External dependencies
 import type { Metadata } from 'next';
-import { SITE } from '../constants/site';
-import { THEME } from '../constants/theme';
+
+// Internal constants
+import { SITE } from '~constants/site';
+import { THEME } from '~constants/theme';
 
 export const metadata: Metadata = {
   title: SITE.title,
@@ -14,6 +17,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
@@ -27,8 +31,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
-  themeColor: THEME.colors.background,
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     title: SITE.title,
@@ -38,4 +40,4 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-};
+} as const;

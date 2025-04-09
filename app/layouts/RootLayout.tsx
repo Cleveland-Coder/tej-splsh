@@ -1,16 +1,6 @@
-// External dependencies
-import Script from 'next/script';
-
-// Internal components
-import Logo from '../components/Logo';
-import SocialLinkList from '../components/SocialLinkList';
-import Container from '../components/Container';
-
-// Internal utilities and config
-import { lato } from '../config/fonts';
-
-// Internal constants
-import { FONT_AWESOME_SCRIPT_URL } from '../constants';
+import Container from '~components/Container';
+import Logo from '~components/Logo';
+import SocialLinkList from '~components/SocialLinkList';
 
 function RootLayout({
   children,
@@ -19,7 +9,7 @@ function RootLayout({
 }>) {
   return (
     <html lang="en-US">
-      <body className={lato.variable}>
+      <body>
         <header className="mb-4">
           <Logo />
         </header>
@@ -29,7 +19,6 @@ function RootLayout({
             <SocialLinkList />
           </Container>
         </footer>
-        <Script src={FONT_AWESOME_SCRIPT_URL}></Script>
       </body>
     </html>
   );

@@ -1,5 +1,7 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 export interface SocialLinkProps {
   href: string;
-  iconClass: string;
+  icon: IconProp;
   title: string;
 }

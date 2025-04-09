@@ -1,5 +1,11 @@
+// External dependencies
 import Link from 'next/link';
+
+// Internal constants
 import { ACTION_LINKS } from './constants';
+
+// Internal utilities and config
+import { lato } from '~config/fonts';
 
 interface ActionLinkProps {
   href: string;
@@ -10,7 +16,7 @@ interface ActionLinkProps {
 
 function ActionLink({ href, children, target, rel }: ActionLinkProps) {
   return (
-    <Link className="btn" href={href} target={target} rel={rel}>
+    <Link className={`btn ${lato.className}`} href={href} target={target} rel={rel}>
       {children}
     </Link>
   );
