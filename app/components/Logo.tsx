@@ -1,3 +1,6 @@
+// Internal styles
+import styles from './Logo/Logo.module.css';
+
 export default function Logo() {
   return (
     <svg
@@ -9,7 +12,7 @@ export default function Logo() {
       height="349.16"
       aria-label="Tiny Erica Jewelry Logo"
       role="img"
-      className="logo"
+      className={styles.logo}
       fill="currentColor"
     >
       <title>Tiny Erica Jewelry Logo</title>
