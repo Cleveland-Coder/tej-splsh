@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   // Allow localhost origins in development
   allowedDevOrigins: ['127.0.0.1', 'localhost'],
   // Configure static file handling
