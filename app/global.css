@@ -23,12 +23,3 @@ a {
   color: inherit;
   text-decoration: underline;
 }
-
-.flag {
-  padding: 12px 8px;
-  margin-top: 12px;
-  background-color: #9a7f62;
-  color: #ffffff;
-  font-size: 24px;
-  text-align: center;
-}
