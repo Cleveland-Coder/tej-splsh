@@ -1,0 +1,26 @@
+.listSocial {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.iconSocial {
+  transition: all 0.3s ease 0s;
+  padding: 0 16px;
+  font-size: 45px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.iconSocial[title='facebook']:hover {
+  color: #3b5998;
+}
+
+.iconSocial[title='instagram']:hover {
+  color: #3f729b;
+}
+
+.iconSocial[title='pinterest']:hover {
+  color: #cc2127;
+}

@@ -7,6 +7,9 @@ import { ACTION_LINKS } from './constants';
 // Internal utilities and config
 import { lato } from '~config/fonts';
 
+// Internal styles
+import styles from './ActionLinkList.module.css';
+
 interface ActionLinkProps {
   href: string;
   children: React.ReactNode;
@@ -16,7 +19,7 @@ interface ActionLinkProps {
 
 function ActionLink({ href, children, target, rel }: ActionLinkProps) {
   return (
-    <Link className={`btn ${lato.className}`} href={href} target={target} rel={rel}>
+    <Link className={`${styles.btn} ${lato.className}`} href={href} target={target} rel={rel}>
       {children}
     </Link>
   );

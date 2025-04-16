@@ -9,11 +9,14 @@ import { SocialLinkProps } from './types';
 import { EXTERNAL_LINK_PROPS } from '~constants/index';
 import { SOCIAL_LINKS } from './constants';
 
+// Internal styles
+import styles from './SocialLinkList.module.css';
+
 function SocialLink({ href, title, icon }: SocialLinkProps) {
   return (
     <li>
       <Link href={href} title={title} {...EXTERNAL_LINK_PROPS}>
-        <FontAwesomeIcon className="icon-social" icon={icon} />
+        <FontAwesomeIcon className={styles.iconSocial} icon={icon} />
       </Link>
     </li>
   );
@@ -21,7 +24,7 @@ function SocialLink({ href, title, icon }: SocialLinkProps) {
 
 function SocialLinkList() {
   return (
-    <ul className="list-social">
+    <ul className={styles.listSocial}>
       {SOCIAL_LINKS.map((link) => (
         <SocialLink key={link.title} {...link} />
       ))}
