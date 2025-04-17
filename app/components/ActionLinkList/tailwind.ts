@@ -5,11 +5,10 @@ export const btnClasses = `
   inline-block
   w-full
   max-w-[300px]
-  py-[11px]
+  py-3
   text-white
   text-[32px]
   tracking-[1px]
-  no-underline
   rounded-lg
   bg-[#9a7f62]
   transition-all
