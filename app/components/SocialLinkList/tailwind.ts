@@ -22,11 +22,14 @@ export const iconSocialClasses = `
 `.trim();
 
 export const iconSocialHoverClasses = {
-  facebook: `hover:text-[${THEME.colors.social.facebook}]`,
-  instagram: `hover:text-[${THEME.colors.social.instagram}]`,
-  pinterest: `hover:text-[${THEME.colors.social.pinterest}]`,
+  facebook: `hover:text-[var(--social-facebook)]`,
+  instagram: `hover:text-[var(--social-instagram)]`,
+  pinterest: `hover:text-[var(--social-pinterest)]`,
 };
 
 export const listSocialStyles: React.CSSProperties = {
   '--social-default': THEME.colors.primary,
+  '--social-facebook': THEME.colors.social.facebook,
+  '--social-instagram': THEME.colors.social.instagram,
+  '--social-pinterest': THEME.colors.social.pinterest,
 } as React.CSSProperties;
