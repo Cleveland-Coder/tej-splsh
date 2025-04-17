@@ -6,8 +6,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #9a7f62;
-  fill: #9a7f62;
   text-align: center;
   -webkit-font-smoothing: antialiased;
 }

@@ -10,7 +10,12 @@ import { EXTERNAL_LINK_PROPS } from '~constants';
 import { SOCIAL_LINKS } from './constants';
 
 // Internal styles
-import { listSocialClasses, iconSocialClasses, iconSocialHoverClasses } from './tailwind';
+import {
+  listSocialClasses,
+  listSocialStyles,
+  iconSocialClasses,
+  iconSocialHoverClasses,
+} from './tailwind';
 
 /**
  * A social media link component with icon
@@ -35,7 +40,7 @@ function SocialLink({ href, title, icon }: SocialLinkProps) {
  */
 function SocialLinkList() {
   return (
-    <ul className={listSocialClasses}>
+    <ul className={listSocialClasses} style={listSocialStyles}>
       {SOCIAL_LINKS.map((link: SocialLinkProps) => (
         <SocialLink key={link.title} {...link} />
       ))}

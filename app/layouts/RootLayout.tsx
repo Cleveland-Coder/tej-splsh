@@ -2,6 +2,7 @@ import Container from '~components/Container';
 import Flag from '~components/Flag';
 import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
+import { THEME } from '~/constants/theme';
 
 function RootLayout({
   children,
@@ -14,7 +15,7 @@ function RootLayout({
   return (
     <html lang="en-US">
       <body>
-        {message && <Flag bgColor="#9a7f62" message={message} />}
+        {message && <Flag bgColor={THEME.colors.primary} message={message} />}
         <header className="mb-4">
           <Logo />
         </header>

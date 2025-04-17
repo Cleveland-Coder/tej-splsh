@@ -1,11 +1,14 @@
 /**
  * Tailwind utility classes for the SocialLinkList component
  */
+import { THEME } from '~/constants/theme';
+
 export const listSocialClasses = `
   flex
   justify-center
   list-none
   p-0
+  text-[var(--social-default)]
 `.trim();
 
 export const iconSocialClasses = `
@@ -19,7 +22,11 @@ export const iconSocialClasses = `
 `.trim();
 
 export const iconSocialHoverClasses = {
-  facebook: 'hover:text-[#3b5998]',
-  instagram: 'hover:text-[#3f729b]',
-  pinterest: 'hover:text-[#cc2127]',
+  facebook: `hover:text-[${THEME.colors.social.facebook}]`,
+  instagram: `hover:text-[${THEME.colors.social.instagram}]`,
+  pinterest: `hover:text-[${THEME.colors.social.pinterest}]`,
 };
+
+export const listSocialStyles: React.CSSProperties = {
+  '--social-default': THEME.colors.primary,
+} as React.CSSProperties;

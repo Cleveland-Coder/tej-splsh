@@ -1,5 +1,6 @@
 // Internal styles
 import { logoClasses } from './tailwind';
+import { THEME } from '~/constants/theme';
 
 /**
  * A component that renders the Tiny Erica Jewelry logo as an SVG
@@ -16,7 +17,7 @@ function Logo() {
       aria-label="Tiny Erica Jewelry Logo"
       role="img"
       className={logoClasses}
-      fill="currentColor"
+      style={{ fill: THEME.colors.primary }}
     >
       <title>Tiny Erica Jewelry Logo</title>
 
