@@ -14,7 +14,7 @@ function RootLayout({
   return (
     <html lang="en-US">
       <body>
-        {message && <Flag message={message} />}
+        {message && <Flag bgColor="#9a7f62" message={message} />}
         <header className="mb-4">
           <Logo />
         </header>

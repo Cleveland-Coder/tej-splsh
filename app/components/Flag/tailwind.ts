@@ -9,7 +9,6 @@ export const flagClasses = `
   py-3
   px-2
   mt-2
-  bg-[#9a7f62]
   text-white
   text-center
 `.trim();
