@@ -1,5 +1,5 @@
 // Internal styles
-import styles from './Flag.module.css';
+import { flagClasses } from './tailwind';
 
 /**
  * Props for the Flag component
@@ -13,7 +13,7 @@ interface FlagProps {
  * A component that displays a message in a flag-like container
  */
 function Flag({ message }: FlagProps) {
-  return <div className={styles.flag}>{message}</div>;
+  return <div className={flagClasses}>{message}</div>;
 }
 
 export default Flag;

@@ -11,14 +11,14 @@ import { ACTION_LINKS } from './constants';
 import { lato } from '~config/fonts';
 
 // Internal styles
-import styles from './ActionLinkList.module.css';
+import { btnClasses } from './tailwind';
 
 /**
  * A styled link component for action buttons
  */
 function ActionLink({ href, children, target, rel }: ActionLinkProps) {
   return (
-    <Link className={`${styles.btn} ${lato.className}`} href={href} target={target} rel={rel}>
+    <Link className={`${btnClasses} ${lato.className}`} href={href} target={target} rel={rel}>
       {children}
     </Link>
   );

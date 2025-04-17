@@ -10,7 +10,7 @@ import { EXTERNAL_LINK_PROPS } from '~constants';
 import { SOCIAL_LINKS } from './constants';
 
 // Internal styles
-import styles from './SocialLinkList.module.css';
+import { listSocialClasses, iconSocialClasses, iconSocialHoverClasses } from './tailwind';
 
 /**
  * A social media link component with icon
@@ -18,7 +18,12 @@ import styles from './SocialLinkList.module.css';
 function SocialLink({ href, title, icon }: SocialLinkProps) {
   return (
     <li>
-      <Link href={href} title={title} className={styles.iconSocial} {...EXTERNAL_LINK_PROPS}>
+      <Link
+        href={href}
+        title={title}
+        className={`${iconSocialClasses} ${iconSocialHoverClasses[title as keyof typeof iconSocialHoverClasses]}`}
+        {...EXTERNAL_LINK_PROPS}
+      >
         <FontAwesomeIcon icon={icon} />
       </Link>
     </li>
@@ -30,7 +35,7 @@ function SocialLink({ href, title, icon }: SocialLinkProps) {
  */
 function SocialLinkList() {
   return (
-    <ul className={styles.listSocial}>
+    <ul className={listSocialClasses}>
       {SOCIAL_LINKS.map((link: SocialLinkProps) => (
         <SocialLink key={link.title} {...link} />
       ))}

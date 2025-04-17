@@ -1,5 +1,5 @@
 // Internal styles
-import styles from './Logo.module.css';
+import { logoClasses } from './tailwind';
 
 /**
  * A component that renders the Tiny Erica Jewelry logo as an SVG
@@ -15,7 +15,7 @@ function Logo() {
       height="349.16"
       aria-label="Tiny Erica Jewelry Logo"
       role="img"
-      className={styles.logo}
+      className={logoClasses}
       fill="currentColor"
     >
       <title>Tiny Erica Jewelry Logo</title>
