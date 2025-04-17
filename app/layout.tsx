@@ -8,7 +8,7 @@ import RootLayout from './layouts/RootLayout';
 import { metadata } from './config/metadata';
 
 // Global styles
-import './globals.css';
+import './global.css';
 
 export { metadata };
 export default RootLayout;

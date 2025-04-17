@@ -1,0 +1,30 @@
+/**
+ * Color utility functions for theme colors
+ */
+
+/**
+ * Darkens a hex color by a percentage
+ * @param hex - The hex color to darken
+ * @param percent - The percentage to darken (0-100)
+ * @returns The darkened hex color
+ */
+export function darken(hex: string, percent: number): string {
+  // Remove the # if present
+  hex = hex.replace('#', '');
+
+  // Parse the hex values
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+
+  // Calculate the darken amount
+  const amount = Math.round(2.55 * percent);
+
+  // Darken each component
+  const newR = Math.max(0, r - amount);
+  const newG = Math.max(0, g - amount);
+  const newB = Math.max(0, b - amount);
+
+  // Convert back to hex
+  return `#${newR.toString(16).padStart(2, '0')}${newG.toString(16).padStart(2, '0')}${newB.toString(16).padStart(2, '0')}`;
+}
