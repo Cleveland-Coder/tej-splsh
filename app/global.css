@@ -11,15 +11,3 @@ body {
   text-align: center;
   -webkit-font-smoothing: antialiased;
 }
-
-img {
-  max-width: 100%;
-  vertical-align: middle;
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-}
