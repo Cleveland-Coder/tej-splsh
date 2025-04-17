@@ -15,8 +15,8 @@ import styles from './SocialLinkList.module.css';
 function SocialLink({ href, title, icon }: SocialLinkProps) {
   return (
     <li>
-      <Link href={href} title={title} {...EXTERNAL_LINK_PROPS}>
-        <FontAwesomeIcon className={styles.iconSocial} icon={icon} />
+      <Link href={href} title={title} className={styles.iconSocial} {...EXTERNAL_LINK_PROPS}>
+        <FontAwesomeIcon icon={icon} />
       </Link>
     </li>
   );
