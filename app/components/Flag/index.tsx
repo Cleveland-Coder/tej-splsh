@@ -1,13 +1,8 @@
 // Internal styles
 import { flagClasses } from './tailwind';
 
-/**
- * Props for the Flag component
- */
-interface FlagProps {
-  /** The message to display in the flag */
-  message: string;
-}
+// Internal types
+import { FlagProps } from './types';
 
 /**
  * A component that displays a message in a flag-like container
