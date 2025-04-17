@@ -6,12 +6,15 @@ import Link from 'next/link';
 import { SocialLinkProps } from './types';
 
 // Internal constants
-import { EXTERNAL_LINK_PROPS } from '~constants/index';
+import { EXTERNAL_LINK_PROPS } from '~constants';
 import { SOCIAL_LINKS } from './constants';
 
 // Internal styles
 import styles from './SocialLinkList.module.css';
 
+/**
+ * A social media link component with icon
+ */
 function SocialLink({ href, title, icon }: SocialLinkProps) {
   return (
     <li>
@@ -22,10 +25,13 @@ function SocialLink({ href, title, icon }: SocialLinkProps) {
   );
 }
 
+/**
+ * A list of social media links with icons
+ */
 function SocialLinkList() {
   return (
     <ul className={styles.listSocial}>
-      {SOCIAL_LINKS.map((link) => (
+      {SOCIAL_LINKS.map((link: SocialLinkProps) => (
         <SocialLink key={link.title} {...link} />
       ))}
     </ul>

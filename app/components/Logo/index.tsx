@@ -1,6 +1,9 @@
 // Internal styles
 import styles from './Logo.module.css';
 
+/**
+ * A component that renders the Tiny Erica Jewelry logo as an SVG
+ */
 function Logo() {
   return (
     <svg

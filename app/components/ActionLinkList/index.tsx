@@ -1,6 +1,9 @@
 // External dependencies
 import Link from 'next/link';
 
+// Internal types
+import { ActionLinkProps, ActionLinkConfig } from './types';
+
 // Internal constants
 import { ACTION_LINKS } from './constants';
 
@@ -10,13 +13,9 @@ import { lato } from '~config/fonts';
 // Internal styles
 import styles from './ActionLinkList.module.css';
 
-interface ActionLinkProps {
-  href: string;
-  children: React.ReactNode;
-  target?: string;
-  rel?: string;
-}
-
+/**
+ * A styled link component for action buttons
+ */
 function ActionLink({ href, children, target, rel }: ActionLinkProps) {
   return (
     <Link className={`${styles.btn} ${lato.className}`} href={href} target={target} rel={rel}>
@@ -25,10 +24,13 @@ function ActionLink({ href, children, target, rel }: ActionLinkProps) {
   );
 }
 
+/**
+ * A list of action links/buttons for navigation
+ */
 function ActionLinkList() {
   return (
     <div>
-      {ACTION_LINKS.map((link) => (
+      {ACTION_LINKS.map((link: ActionLinkConfig) => (
         <ActionLink key={link.href} href={link.href} target={link.target} rel={link.rel}>
           {link.label}
         </ActionLink>
