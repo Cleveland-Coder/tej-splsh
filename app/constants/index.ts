@@ -1,17 +1,18 @@
-import { THEME } from '~/constants/theme';
+// External dependencies
 import { AnchorHTMLAttributes } from 'react';
 
-interface BannerType {
-  bgColor: string;
-  message: string;
-}
+// Internal constants
+import { THEME } from '~/constants/theme';
+
+// Internal types
+import { FlagProps } from '~/components/Flag/types';
 
 export const EXTERNAL_LINK_PROPS: AnchorHTMLAttributes<HTMLAnchorElement> = {
   rel: 'noopener noreferrer',
   target: '_blank',
 } as const;
 
-export const BANNER: BannerType = {
+export const BANNER: FlagProps = {
   bgColor: THEME.colors.primary,
   message: '',
 } as const;
