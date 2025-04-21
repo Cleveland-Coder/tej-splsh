@@ -1,10 +1,12 @@
+import { ReactNode } from 'react';
+
 import Container from '~components/Container';
 import Flag from '~components/Flag';
 import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
 import { BANNER } from '~constants';
 
-function displayAvailableBannerText(): React.ReactNode {
+function displayAvailableBannerText(): ReactNode {
   if (!BANNER.message) return null;
   return <Flag bgColor={BANNER.bgColor} message={BANNER.message} />;
 }
@@ -12,7 +14,7 @@ function displayAvailableBannerText(): React.ReactNode {
 function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en-US">
