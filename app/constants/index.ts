@@ -1,18 +1,14 @@
 import { THEME } from '~/constants/theme';
+import { AnchorHTMLAttributes } from 'react';
 
 interface BannerType {
   bgColor: string;
   message: string;
 }
 
-interface ExternalLinkProps {
-  rel: string;
-  target: string;
-}
-
-export const EXTERNAL_LINK_PROPS: ExternalLinkProps = {
-  rel: '_blank',
-  target: 'noopener noreferrer',
+export const EXTERNAL_LINK_PROPS: AnchorHTMLAttributes<HTMLAnchorElement> = {
+  rel: 'noopener noreferrer',
+  target: '_blank',
 } as const;
 
 export const BANNER: BannerType = {
