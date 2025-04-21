@@ -2,20 +2,22 @@ import Container from '~components/Container';
 import Flag from '~components/Flag';
 import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
-import { THEME } from '~/constants/theme';
+import { BANNER } from '~constants';
+
+function displayAvailableBannerText(): React.ReactNode {
+  if (!BANNER.message) return null;
+  return <Flag bgColor={BANNER.bgColor} message={BANNER.message} />;
+}
 
 function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let message = null;
-  // message = 'FLASH SALE: 20% off select items. Code: FLASH20';
-
   return (
     <html lang="en-US">
       <body>
-        {message && <Flag bgColor={THEME.colors.primary} message={message} />}
+        {displayAvailableBannerText()}
         <header className="mb-4">
           <Logo />
         </header>
