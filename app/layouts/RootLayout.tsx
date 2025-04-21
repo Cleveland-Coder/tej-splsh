@@ -6,7 +6,7 @@ import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
 import { BANNER } from '~constants';
 
-function displayAvailableBannerText(): ReactNode {
+function displayAvailableFlag(): ReactNode {
   if (!BANNER.message) return null;
   return <Flag bgColor={BANNER.bgColor} message={BANNER.message} />;
 }
@@ -19,7 +19,7 @@ function RootLayout({
   return (
     <html lang="en-US">
       <body>
-        {displayAvailableBannerText()}
+        {displayAvailableFlag()}
         <header className="mb-4">
           <Logo />
         </header>
