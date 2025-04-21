@@ -1,9 +1,13 @@
+// External dependencies
 import { ReactNode } from 'react';
 
+// Internal components
 import Container from '~components/Container';
 import Flag from '~components/Flag';
 import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
+
+// Internal constants
 import { BANNER } from '~constants';
 
 function displayAvailableFlag(): ReactNode {

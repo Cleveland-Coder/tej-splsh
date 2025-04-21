@@ -1,11 +1,11 @@
 // External dependencies
 import { AnchorHTMLAttributes } from 'react';
 
-// Internal constants
-import { THEME } from '~/constants/theme';
-
 // Internal types
 import { FlagProps } from '~/components/Flag/types';
+
+// Internal constants
+import { THEME } from '~/constants/theme';
 
 export const BANNER: FlagProps = {
   bgColor: THEME.colors.primary,
