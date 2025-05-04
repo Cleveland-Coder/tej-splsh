@@ -1,7 +1,7 @@
 /**
  * Tailwind utility classes for the RootLayout component
  */
-export const bodyClasses = `
+export const layoutClassnames = `
   min-h-screen
   flex
   flex-col
