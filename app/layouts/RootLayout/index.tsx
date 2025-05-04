@@ -4,9 +4,6 @@ import { ReactNode } from 'react';
 // Internal helpers
 import { displayAvailableFlag } from '~helpers';
 
-// Internal styles
-import { layoutClassnames } from './tailwind';
-
 function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +13,7 @@ function RootLayout({
     <html lang="en-US">
       <body>
         {displayAvailableFlag()}
-        <div className={layoutClassnames}>{children}</div>
+        {children}
       </body>
     </html>
   );

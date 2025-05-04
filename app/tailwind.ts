@@ -1,5 +1,5 @@
 /**
- * Tailwind utility classes for the RootLayout component
+ * Tailwind utility classes for the home page
  */
 export const layoutClassnames = `
   min-h-screen
