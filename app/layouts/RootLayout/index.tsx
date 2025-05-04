@@ -9,6 +9,9 @@ import SocialLinkList from '~components/SocialLinkList';
 // Internal helpers
 import { displayAvailableFlag } from '~helpers';
 
+// Internal styles
+import { bodyClasses } from './tailwind';
+
 function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +19,7 @@ function RootLayout({
 }>) {
   return (
     <html lang="en-US">
-      <body>
+      <body className={bodyClasses}>
         {displayAvailableFlag()}
         <header className="mb-4">
           <Logo />
