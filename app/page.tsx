@@ -1,8 +1,11 @@
-import Logo from '~components/Logo';
+// Internal components
 import ActionLinkList from './components/ActionLinkList';
 import Container from './components/Container';
-import { THEME } from '~constants/theme';
+import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
+
+// Internal constants
+import { THEME } from '~constants/theme';
 
 // Internal styles
 import { headerClassnames, layoutClassnames } from './tailwind';
