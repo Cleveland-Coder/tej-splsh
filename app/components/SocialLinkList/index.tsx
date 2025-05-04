@@ -11,10 +11,10 @@ import { SOCIAL_LINKS } from './constants';
 
 // Internal styles
 import {
-  listSocialClasses,
+  listSocialClassNames,
   listSocialStyles,
-  iconSocialClasses,
-  iconSocialHoverClasses,
+  iconSocialClassNames,
+  iconSocialHoverClassNames,
 } from './tailwind';
 
 /**
@@ -26,7 +26,7 @@ function SocialLink({ href, title, icon }: SocialLinkProps) {
       <Link
         href={href}
         title={title}
-        className={`${iconSocialClasses} ${iconSocialHoverClasses[title as keyof typeof iconSocialHoverClasses]}`}
+        className={`${iconSocialClassNames} ${iconSocialHoverClassNames[title as keyof typeof iconSocialHoverClassNames]}`}
         {...EXTERNAL_LINK_PROPS}
       >
         <FontAwesomeIcon icon={icon} />
@@ -40,7 +40,7 @@ function SocialLink({ href, title, icon }: SocialLinkProps) {
  */
 function SocialLinkList() {
   return (
-    <ul className={listSocialClasses} style={listSocialStyles}>
+    <ul className={listSocialClassNames} style={listSocialStyles}>
       {SOCIAL_LINKS.map((link: SocialLinkProps) => (
         <SocialLink key={link.title} {...link} />
       ))}

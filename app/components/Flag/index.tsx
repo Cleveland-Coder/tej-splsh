@@ -1,5 +1,5 @@
 // Internal styles
-import { flagClasses } from './tailwind';
+import { flagClassNames } from './tailwind';
 
 // Internal types
 import { FlagProps } from './types';
@@ -9,7 +9,7 @@ import { FlagProps } from './types';
  */
 function Flag({ bgColor, message }: FlagProps) {
   return (
-    <div className={flagClasses} style={{ backgroundColor: bgColor }}>
+    <div className={flagClassNames} style={{ backgroundColor: bgColor }}>
       {message}
     </div>
   );

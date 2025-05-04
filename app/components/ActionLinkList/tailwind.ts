@@ -7,7 +7,7 @@ const hoverColor = darken(THEME.colors.primary, 20);
 /**
  * Tailwind utility classes for the ActionLinkList component
  */
-export const btnClasses = `
+export const btnClassNames = `
   inline-block
   w-full
   max-w-[300px]

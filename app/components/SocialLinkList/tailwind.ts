@@ -3,7 +3,7 @@
  */
 import { THEME } from '~/constants/theme';
 
-export const listSocialClasses = `
+export const listSocialClassNames = `
   flex
   justify-center
   list-none
@@ -11,7 +11,7 @@ export const listSocialClasses = `
   text-[var(--social-default)]
 `.trim();
 
-export const iconSocialClasses = `
+export const iconSocialClassNames = `
   transition-all
   duration-300
   ease-in-out
@@ -21,7 +21,7 @@ export const iconSocialClasses = `
   no-underline
 `.trim();
 
-export const iconSocialHoverClasses = {
+export const iconSocialHoverClassNames = {
   facebook: `hover:text-[var(--social-facebook)]`,
   instagram: `hover:text-[var(--social-instagram)]`,
   pinterest: `hover:text-[var(--social-pinterest)]`,
