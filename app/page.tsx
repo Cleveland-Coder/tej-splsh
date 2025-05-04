@@ -1,6 +1,6 @@
 // Internal components
-import ActionLinkList from './components/ActionLinkList';
-import Container from './components/Container';
+import ActionLinkList from '~components/ActionLinkList';
+import Container from '~components/Container';
 import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
 
