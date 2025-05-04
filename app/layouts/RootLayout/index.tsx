@@ -12,6 +12,9 @@ import { displayAvailableFlag } from '~helpers';
 // Internal styles
 import { bodyClasses } from './tailwind';
 
+// Internal constants
+import { THEME } from '~constants/theme';
+
 function RootLayout({
   children,
 }: Readonly<{
@@ -22,7 +25,7 @@ function RootLayout({
       <body className={bodyClasses}>
         {displayAvailableFlag()}
         <header className="mb-4">
-          <Logo />
+          <Logo fill={THEME.colors.primary} />
         </header>
         <main>{children}</main>
         <footer>
