@@ -5,12 +5,12 @@ import { THEME } from '~constants/theme';
 import SocialLinkList from '~components/SocialLinkList';
 
 // Internal styles
-import { layoutClassnames } from './tailwind';
+import { headerClassnames, layoutClassnames } from './tailwind';
 
 function Home() {
   return (
     <div className={layoutClassnames}>
-      <header className="mb-4">
+      <header className={headerClassnames}>
         <Logo fill={THEME.colors.primary} />
       </header>
       <main>
