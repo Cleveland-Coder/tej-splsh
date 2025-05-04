@@ -1,30 +1,19 @@
-import Container from '~components/Container';
-import Flag from '~components/Flag';
-import Logo from '~components/Logo';
-import SocialLinkList from '~components/SocialLinkList';
-import { THEME } from '~/constants/theme';
+// External dependencies
+import { ReactNode } from 'react';
+
+// Internal helpers
+import { displayAvailableFlag } from '~helpers';
 
 function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
-  let message = null;
-  // message = 'FLASH SALE: 20% off select items. Code: FLASH20';
-
   return (
     <html lang="en-US">
       <body>
-        {message && <Flag bgColor={THEME.colors.primary} message={message} />}
-        <header className="mb-4">
-          <Logo />
-        </header>
-        <main>{children}</main>
-        <footer>
-          <Container>
-            <SocialLinkList />
-          </Container>
-        </footer>
+        {displayAvailableFlag()}
+        {children}
       </body>
     </html>
   );

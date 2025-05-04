@@ -1,7 +1,7 @@
 /**
  * Tailwind utility classes for the Container component
  */
-export const containerClasses = `
+export const containerClassNames = `
   w-full
   mx-auto
   my-6

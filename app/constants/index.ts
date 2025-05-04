@@ -1,11 +1,18 @@
-interface ExternalLinkProps {
-  rel: string;
-  target: string;
-}
+// External dependencies
+import { AnchorHTMLAttributes } from 'react';
 
-export const EXTERNAL_LINK_PROPS: ExternalLinkProps = {
-  rel: '_blank',
-  target: 'noopener noreferrer',
+// Internal types
+import { FlagProps } from '~/components/Flag/types';
+
+// Internal constants
+import { THEME } from '~/constants/theme';
+
+export const BANNER: FlagProps = {
+  bgColor: THEME.colors.primary,
+  message: '',
 } as const;
 
-export const FONT_AWESOME_SCRIPT_URL = 'https://use.fontawesome.com/f6e0e51e9b.js' as const;
+export const EXTERNAL_LINK_PROPS: AnchorHTMLAttributes<HTMLAnchorElement> = {
+  rel: 'noopener noreferrer',
+  target: '_blank',
+} as const;

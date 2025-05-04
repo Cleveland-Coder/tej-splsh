@@ -1,7 +1,7 @@
 /**
  * Tailwind utility classes for the Flag component
  */
-export const flagClasses = `
+export const flagClassNames = `
   fixed
   top-0
   left-0
