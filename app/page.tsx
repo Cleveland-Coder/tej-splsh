@@ -10,7 +10,7 @@ import { THEME } from '~constants/theme';
 // Internal styles
 import { headerClassnames, layoutClassnames } from './tailwind';
 
-function Home() {
+function LegacyHome() {
   return (
     <div className={layoutClassnames}>
       <header className={headerClassnames}>
@@ -30,4 +30,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default LegacyHome;
