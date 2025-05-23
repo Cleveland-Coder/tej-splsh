@@ -8,7 +8,4 @@ export const THEME = {
       pinterest: '#cc2127',
     },
   },
-  fonts: {
-    lato: '--font-lato',
-  },
 } as const;
