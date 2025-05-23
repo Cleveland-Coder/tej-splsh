@@ -12,8 +12,9 @@ export const btnClassNames = `
   w-full
   max-w-[300px]
   py-3
+  px-2
   text-white
-  text-[32px]
+  text-lg
   tracking-[1px]
   rounded-lg
   bg-[var(--btn-bg)]
