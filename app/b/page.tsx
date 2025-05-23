@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className={layoutClassnames}>
       <header className={headerClassnames}>
-        <Logo fill={THEME.colors.primary} />
+        <Logo fill={THEME.colors.blindForest} />
       </header>
       <main>
         <Container>
