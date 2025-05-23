@@ -1,4 +1,6 @@
 // Internal components
+import ActionLinkList from '~components/ActionLinkList';
+import Container from '~components/Container';
 import Logo from '~components/Logo';
 
 // Internal constants
@@ -13,7 +15,11 @@ function Home() {
       <header className={headerClassnames}>
         <Logo fill={THEME.colors.primary} />
       </header>
-      <main></main>
+      <main>
+        <Container>
+          <ActionLinkList />
+        </Container>
+      </main>
       <footer></footer>
     </div>
   );

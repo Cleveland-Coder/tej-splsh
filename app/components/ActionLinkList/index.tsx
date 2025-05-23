@@ -8,7 +8,7 @@ import { ActionLinkProps, ActionLinkConfig } from './types';
 import { ACTION_LINKS } from './constants';
 
 // Internal utilities and config
-import { lato } from '~config/fonts';
+import { arsenalBoldItalic } from '~config/fonts';
 
 // Internal styles
 import { btnClassNames, btnStyles } from './tailwind';
@@ -20,7 +20,7 @@ function ActionLink({ href, children, target, rel }: ActionLinkProps) {
   return (
     <Link
       href={href}
-      className={`${btnClassNames} ${lato.className}`}
+      className={`${btnClassNames} ${arsenalBoldItalic.className}`}
       style={btnStyles}
       target={target}
       rel={rel}

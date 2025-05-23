@@ -1,8 +1,8 @@
 import { THEME } from '~/constants/theme';
-import { darken } from '~/utils/colors';
+import { lighten } from '~/utils/colors';
 
 // Pre-compute the hover color
-const hoverColor = darken(THEME.colors.primary, 20);
+const hoverColor = lighten(THEME.colors.blindForest, 10);
 
 /**
  * Tailwind utility classes for the ActionLinkList component
@@ -26,6 +26,6 @@ export const btnClassNames = `
 
 // CSS variables to be set in the component
 export const btnStyles: React.CSSProperties = {
-  '--btn-bg': THEME.colors.primary,
+  '--btn-bg': THEME.colors.blindForest,
   '--btn-hover': hoverColor,
 } as React.CSSProperties;
