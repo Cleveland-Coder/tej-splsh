@@ -1,5 +1,5 @@
 // Internal components
-import ActionLinkList from '~components/ActionLinkList';
+import LegacyActionLinkList from '~components/LegacyActionLinkList';
 import Container from '~components/Container';
 import Logo from '~components/Logo';
 import SocialLinkList from '~components/SocialLinkList';
@@ -18,7 +18,7 @@ function LegacyHome() {
       </header>
       <main>
         <Container>
-          <ActionLinkList />
+          <LegacyActionLinkList />
         </Container>
       </main>
       <footer>
