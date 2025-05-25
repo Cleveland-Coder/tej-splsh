@@ -16,14 +16,14 @@ import { btnClassNames, btnStyles } from './tailwind';
 /**
  * A styled link component for action buttons
  */
-function ActionLink({ href, children, target, rel }: ActionLinkProps) {
+function ActionLink({ children, href, rel, target }: ActionLinkProps) {
   return (
     <Link
-      href={href}
       className={`${btnClassNames} ${arsenalBoldItalic.className}`}
+      href={href}
+      rel={rel}
       style={btnStyles}
       target={target}
-      rel={rel}
     >
       {children}
     </Link>
@@ -37,7 +37,7 @@ function ActionLinkList() {
   return (
     <div>
       {ACTION_LINKS.map((link: ActionLinkConfig) => (
-        <ActionLink key={link.href} href={link.href} target={link.target} rel={link.rel}>
+        <ActionLink href={link.href} key={link.href} rel={link.rel} target={link.target}>
           {link.label}
         </ActionLink>
       ))}
