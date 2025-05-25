@@ -1,9 +1,13 @@
+// External dependencies
+import Image from 'next/image';
+
 // Internal components
 import ActionLinkList from '~components/ActionLinkList';
 import Container from '~components/Container';
 import Logo from '~components/Logo';
 
 // Internal constants
+import { BODY_COPY, IMAGE_PROPS } from './constants';
 import { THEME } from '~constants/theme';
 
 // Internal utilities and config
@@ -27,9 +31,26 @@ function Home() {
               sterling silver jewelry designed on paper, crafted by hand, and made to last&hellip;
             </p>
           </div>
+          <Image {...IMAGE_PROPS[0]} className="mt-6 mx-auto" />
+          <div className="text-left">
+            {BODY_COPY.slice(0, 2).map((copy, index) => (
+              <p key={index} className="mt-6">
+                {copy}
+              </p>
+            ))}
+          </div>
+          <Image {...IMAGE_PROPS[1]} className="mt-6 mx-auto" />
+          <div className="text-left">
+            {BODY_COPY.slice(2).map((copy, index) => (
+              <p key={index} className="mt-6">
+                {copy}
+              </p>
+            ))}
+          </div>
         </Container>
         <Container className="max-w-[360px] mt-12 ">
           <ActionLinkList />
+          <Image {...IMAGE_PROPS[2]} className="my-12 mx-auto" />
         </Container>
       </main>
       <footer></footer>
