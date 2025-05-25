@@ -37,10 +37,8 @@ function ActionLink({ children, href, rel, spaced, target }: ActionLinkProps) {
 function ActionLinkList() {
   return (
     <>
-      {ACTION_LINKS.map(({ children, href, rel, spaced, target }: ActionLinkProps) => (
-        <ActionLink href={href} key={href} rel={rel} spaced={spaced} target={target}>
-          {children}
-        </ActionLink>
+      {ACTION_LINKS.map((props: ActionLinkProps) => (
+        <ActionLink key={props.href} {...props} />
       ))}
     </>
   );
