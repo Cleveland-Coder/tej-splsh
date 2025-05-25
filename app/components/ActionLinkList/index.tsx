@@ -16,10 +16,11 @@ import { btnClassNames, btnStyles } from './tailwind';
 /**
  * A styled link component for action buttons
  */
-function ActionLink({ children, href, rel, target }: ActionLinkProps) {
+function ActionLink({ children, href, rel, spaced, target }: ActionLinkProps) {
+  const spacingClassName = spaced ? 'mt-12' : '[&:not(:first-child)]:mt-3';
   return (
     <Link
-      className={`${btnClassNames} ${arsenalBoldItalic.className}`}
+      className={`${btnClassNames} ${arsenalBoldItalic.className} ${spacingClassName}`}
       href={href}
       rel={rel}
       style={btnStyles}
@@ -36,8 +37,8 @@ function ActionLink({ children, href, rel, target }: ActionLinkProps) {
 function ActionLinkList() {
   return (
     <>
-      {ACTION_LINKS.map(({ children, href, rel, target }: ActionLinkProps) => (
-        <ActionLink href={href} key={href} rel={rel} target={target}>
+      {ACTION_LINKS.map(({ children, href, rel, spaced, target }: ActionLinkProps) => (
+        <ActionLink href={href} key={href} rel={rel} spaced={spaced} target={target}>
           {children}
         </ActionLink>
       ))}

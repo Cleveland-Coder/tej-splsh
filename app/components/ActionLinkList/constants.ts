@@ -12,6 +12,7 @@ export const ACTION_LINKS: ActionLinkProps[] = [
   {
     children: 'Shop my collection',
     href: '//www.etsy.com/shop/TinyErica',
+    spaced: true,
     ...EXTERNAL_LINK_PROPS,
   },
 ] as const;

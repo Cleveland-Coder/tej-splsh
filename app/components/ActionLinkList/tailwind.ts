@@ -22,7 +22,6 @@ export const btnClassNames = `
   duration-300
   ease-in-out
   hover:bg-[var(--btn-hover)]
-  [&:not(:first-child)]:mt-3
 `.trim();
 
 // CSS variables to be set in the component

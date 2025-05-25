@@ -7,6 +7,8 @@ export interface ActionLinkProps {
   href: string;
   /** Optional rel attribute for the link */
   rel?: string;
+  /** Optional marker to add spacing between links */
+  spaced?: boolean;
   /** Optional target attribute for the link */
   target?: string;
 }
