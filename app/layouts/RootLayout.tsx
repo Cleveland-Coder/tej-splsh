@@ -4,6 +4,9 @@ import { ReactNode } from 'react';
 // Internal helpers
 import { displayAvailableFlag } from '~helpers';
 
+// Internal utilities and config
+import { openSans } from '~config/fonts';
+
 function RootLayout({
   children,
 }: Readonly<{
@@ -11,7 +14,7 @@ function RootLayout({
 }>) {
   return (
     <html lang="en-US">
-      <body>
+      <body className={openSans.className}>
         {displayAvailableFlag()}
         {children}
       </body>

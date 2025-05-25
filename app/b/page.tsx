@@ -1,8 +1,7 @@
 // Internal components
-import LegacyActionLinkList from '~components/LegacyActionLinkList';
+import ActionLinkList from '~components/ActionLinkList';
 import Container from '~components/Container';
 import Logo from '~components/Logo';
-import SocialLinkList from '~components/SocialLinkList';
 
 // Internal constants
 import { THEME } from '~constants/theme';
@@ -10,24 +9,20 @@ import { THEME } from '~constants/theme';
 // Internal styles
 import { headerClassnames, layoutClassnames } from './tailwind';
 
-function LegacyHome() {
+function Home() {
   return (
     <div className={layoutClassnames}>
       <header className={headerClassnames}>
-        <Logo fill={THEME.colors.primary} />
+        <Logo fill={THEME.colors.blindForest} />
       </header>
       <main>
         <Container>
-          <LegacyActionLinkList />
+          <ActionLinkList />
         </Container>
       </main>
-      <footer>
-        <Container>
-          <SocialLinkList />
-        </Container>
-      </footer>
+      <footer></footer>
     </div>
   );
 }
 
-export default LegacyHome;
+export default Home;

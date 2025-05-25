@@ -1,1 +1,9 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-blind-forest: #233000;
+  --color-go-go-lime: #c5be6c;
+  --color-butter-honey: #f5e5a9;
+  --color-full-moon: #f4f3e1;
+  --color-warm-wassail: #a57068;
+}
