@@ -20,7 +20,7 @@ export const IMAGE_PROPS: {
   {
     alt: 'artist Erica forming a ring with tweezers and a butane torch',
     height: 450,
-    src: '/images/TEJ-2025actionshot.jpg',
+    src: '/images/TEJ-2025-ActionShot.jpg',
     width: 600,
   },
   {
