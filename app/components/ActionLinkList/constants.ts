@@ -1,17 +1,17 @@
 // Internal types
-import { ActionLinkConfig } from './types';
+import { ActionLinkProps } from './types';
 
 // Internal constants
 import { EXTERNAL_LINK_PROPS } from '~constants';
 
-export const ACTION_LINKS: ActionLinkConfig[] = [
+export const ACTION_LINKS: ActionLinkProps[] = [
   {
+    children: 'Email me about custom work!',
     href: 'mailto:hello@tinyerica.com',
-    label: 'Email me about custom work!',
   },
   {
+    children: 'Shop my collection',
     href: '//www.etsy.com/shop/TinyErica',
-    label: 'Shop my collection',
     ...EXTERNAL_LINK_PROPS,
   },
 ] as const;

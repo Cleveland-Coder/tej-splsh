@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 // Internal types
-import { ActionLinkProps, ActionLinkConfig } from './types';
+import { ActionLinkProps } from './types';
 
 // Internal constants
 import { ACTION_LINKS } from './constants';
@@ -36,9 +36,9 @@ function ActionLink({ children, href, rel, target }: ActionLinkProps) {
 function ActionLinkList() {
   return (
     <div>
-      {ACTION_LINKS.map((link: ActionLinkConfig) => (
+      {ACTION_LINKS.map((link: ActionLinkProps) => (
         <ActionLink href={link.href} key={link.href} rel={link.rel} target={link.target}>
-          {link.label}
+          {link.children}
         </ActionLink>
       ))}
     </div>

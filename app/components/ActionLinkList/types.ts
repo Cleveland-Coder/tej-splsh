@@ -1,12 +1,5 @@
 import { ReactNode } from 'react';
 
-export interface ActionLinkConfig {
-  href: string;
-  label: string;
-  rel?: string;
-  target?: string;
-}
-
 export interface ActionLinkProps {
   /** The content to display within the link */
   children: ReactNode;
