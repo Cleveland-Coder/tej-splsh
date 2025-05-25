@@ -7,7 +7,7 @@ import Container from '~components/Container';
 import Logo from '~components/Logo';
 
 // Internal constants
-import { BODY_COPY, IMAGE_PROPS } from './constants';
+import { BODY_COPY, IMAGE_PROPS, INTRO_COPY, INTRO_TITLE } from './constants';
 import { THEME } from '~constants/theme';
 
 // Internal utilities and config
@@ -26,11 +26,8 @@ function Home() {
       <main>
         <Container className="max-w-[600px]">
           <div className={`${arsenalBoldItalic.className} text-center`}>
-            <h1 className="text-4xl font-bold">Tiny Erica Jewelry</h1>
-            <p className="text-lg mt-4">
-              Celebrate who you are and who you love with a bespoke collection of 14k gold and
-              sterling silver jewelry designed on paper, crafted by hand, and made to last&hellip;
-            </p>
+            <h1 className="text-4xl font-bold">{INTRO_TITLE}</h1>
+            <p className="text-lg mt-4">{INTRO_COPY}</p>
           </div>
           <Image {...IMAGE_PROPS[0]} className="mt-6 mx-auto" />
           <div className="text-left">
