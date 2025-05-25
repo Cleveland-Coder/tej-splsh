@@ -17,12 +17,12 @@ function LegacyHome() {
         <Logo fill={THEME.colors.primary} />
       </header>
       <main>
-        <Container>
+        <Container className="max-w-[360px] my-6 md:my-3">
           <LegacyActionLinkList />
         </Container>
       </main>
       <footer>
-        <Container>
+        <Container className="max-w-[360px] my-6 md:my-3">
           <SocialLinkList />
         </Container>
       </footer>
