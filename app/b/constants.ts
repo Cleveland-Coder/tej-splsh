@@ -32,6 +32,6 @@ export const IMAGE_PROPS: {
 ];
 
 export const INTRO_COPY: string =
-  'Celebrate who you are and who you love with a bespoke collection of 14k gold and sterling silver jewelry designed on paper, crafted by hand, and made to last&hellip;';
+  'Celebrate who you are and who you love with a bespoke collection of 14k gold and sterling silver jewelry designed on paper, crafted by hand, and made to last';
 
 export const INTRO_TITLE: string = 'Tiny Erica Jewelry';

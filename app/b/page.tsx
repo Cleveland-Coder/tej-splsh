@@ -27,7 +27,7 @@ function Home() {
         <Container className="max-w-[600px]">
           <div className={`${arsenalBoldItalic.className} text-center`}>
             <h1 className="text-4xl font-bold">{INTRO_TITLE}</h1>
-            <p className="text-lg mt-4">{INTRO_COPY}</p>
+            <p className="text-lg mt-4">{INTRO_COPY}&hellip;</p>
           </div>
           <Image {...IMAGE_PROPS[0]} className="mt-6 mx-auto" />
           <div className="text-left">
