@@ -15,4 +15,15 @@ export const ACTION_LINKS: ActionLinkProps[] = [
     spaced: true,
     ...EXTERNAL_LINK_PROPS,
   },
+  {
+    children: 'Say hi on Threads',
+    href: '//threads.net/tinyerica',
+    ...EXTERNAL_LINK_PROPS,
+  },
+  {
+    children: 'Follow along on Instagram',
+    href: '//instagram.com/tinyerica',
+    spaced: true,
+    ...EXTERNAL_LINK_PROPS,
+  },
 ] as const;
