@@ -22,6 +22,7 @@ function Home() {
       <header className={headerClassnames}>
         <Logo fill={THEME.colors.blindForest} />
       </header>
+
       <main>
         <Container className="max-w-[600px]">
           <div className={`${arsenalBoldItalic.className} text-center`}>
@@ -50,10 +51,14 @@ function Home() {
         </Container>
         <Container className="max-w-[360px] mt-12 ">
           <ActionLinkList />
-          <Image {...IMAGE_PROPS[2]} className="my-12 mx-auto" />
         </Container>
       </main>
-      <footer></footer>
+
+      <footer>
+        <Container className="max-w-[600px]">
+          <Image {...IMAGE_PROPS[2]} className="my-12 mx-auto" />
+        </Container>
+      </footer>
     </div>
   );
 }
