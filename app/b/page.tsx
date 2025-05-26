@@ -55,7 +55,11 @@ function Home() {
       <footer>
         <Container className="max-w-[600px]">
           <BeholdWidget />
-          <Image {...IMAGE_PROPS[2]} className="my-12 mx-auto" />
+          <Image {...IMAGE_PROPS[2]} className="mt-12 mx-auto" />
+          <div className="my-12">
+            <div>Tiny Erica Jewelry, Cleveland, OH</div>
+            <br /> <div>Copyright {new Date().getFullYear()}, Tiny Erica Jewelry</div>
+          </div>
         </Container>
       </footer>
     </div>
