@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 // Internal components
 import ActionLinkList from '~components/ActionLinkList';
+import BeholdWidget from '~components/BeholdWidget';
 import Container from '~components/Container';
 import Logo from '~components/Logo';
 
@@ -53,7 +54,12 @@ function Home() {
 
       <footer>
         <Container className="max-w-[600px]">
-          <Image {...IMAGE_PROPS[2]} className="my-12 mx-auto" />
+          <BeholdWidget />
+          <Image {...IMAGE_PROPS[2]} className="mt-12 mx-auto" />
+          <div className="my-12">
+            <div>Tiny Erica Jewelry, Cleveland, OH</div>
+            <br /> <div>Copyright {new Date().getFullYear()}, Tiny Erica Jewelry</div>
+          </div>
         </Container>
       </footer>
     </div>
