@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 // Internal components
 import ActionLinkList from '~components/ActionLinkList';
+import BeholdWidget from '~components/BeholdWidget';
 import Container from '~components/Container';
 import Logo from '~components/Logo';
 
@@ -53,6 +54,7 @@ function Home() {
 
       <footer>
         <Container className="max-w-[600px]">
+          <BeholdWidget />
           <Image {...IMAGE_PROPS[2]} className="my-12 mx-auto" />
         </Container>
       </footer>
