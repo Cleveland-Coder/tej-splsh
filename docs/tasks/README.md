@@ -7,18 +7,11 @@ Keep this index in sync: when an item lands, delete its file and its row.
 
 ## Open
 
-| Item                                                                        | Type     | Priority                            | Why it's waiting                                                   |
-| --------------------------------------------------------------------------- | -------- | ----------------------------------- | ------------------------------------------------------------------ |
-| [Migrate off `next lint` to flat config](./eslint-flat-config-migration.md) | Prompt   | **Deadline-bound** — before Next 16 | Widens lint scope, so it needs its own session and real testing.   |
-| [The unsigned initial commit](./unsigned-initial-commit.md)                 | Decision | Low — recommend closing as won't-do | Fixing it rewrites all ~133 SHAs and force-pushes over merged PRs. |
-
-### Not yet written up
-
-- **No CI.** `.github/workflows` does not exist. `.husky/pre-push` is the
-  _only_ thing enforcing format and lint, and a `--no-verify` push skips it
-  entirely with nothing behind it. Deliberately left as-is for now — the hook
-  is load-bearing on purpose. Worth revisiting if anyone else ever commits
-  here. Say the word and this becomes a prompt file.
+| Item                                                                        | Type     | Priority                            | Why it's waiting                                                     |
+| --------------------------------------------------------------------------- | -------- | ----------------------------------- | -------------------------------------------------------------------- |
+| [Migrate off `next lint` to flat config](./eslint-flat-config-migration.md) | Prompt   | **Deadline-bound** — before Next 16 | Widens lint scope, so it needs its own session and real testing.     |
+| [Add CI](./add-ci.md)                                                       | Prompt   | High — nothing type-checks today    | No `.github/`; `--no-verify` bypasses the only enforcement there is. |
+| [The unsigned initial commit](./unsigned-initial-commit.md)                 | Decision | Low — recommend closing as won't-do | Fixing it rewrites all ~133 SHAs and force-pushes over merged PRs.   |
 
 ## Known tradeoffs (not tasks)
 
