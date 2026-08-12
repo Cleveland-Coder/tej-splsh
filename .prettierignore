@@ -1,0 +1,5 @@
+# pnpm-lock.yaml is generated. Prettier rewrites pnpm's compact flow-style
+# YAML into block style, which turns every dependency change into ~2700 lines
+# of formatting churn and fails format:check (blocking the pre-push hook)
+# until someone remembers to run `pnpm format`.
+pnpm-lock.yaml
