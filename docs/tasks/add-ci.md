@@ -1,5 +1,10 @@
 # Prompt: add CI to tej-splsh
 
+**Status:** Not started
+**Last verified:** 2026-08-12 — no `.github/`; Vercel builds every PR and
+already covers build, typecheck and lint; `format:check` is the gap
+**Run from:** `~/work/tej-splsh`
+
 Written 2026-08-12, split out of the husky hook fixup. Paste the block below
 into a fresh Claude Code session started in `~/work/tej-splsh`.
 

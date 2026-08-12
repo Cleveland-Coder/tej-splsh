@@ -1,9 +1,17 @@
 # Backlog
 
-Deferred work for this repo. Each item below is either a ready-to-paste prompt
-for a fresh Claude Code session, or a decision waiting to be made and closed.
+Deferred work for this repo. Each item is either a ready-to-paste prompt for a
+fresh Claude Code session, or a decision waiting to be made and closed.
 
-Keep this index in sync: when an item lands, delete its file and its row.
+> **`~/.claude/unfinished/README.md` is the source of truth.** That directory
+> indexes unfinished work across every repo, and each item here is symlinked
+> into it. This file is the repo-local view of the same items — the prompt
+> files live here so they travel with the code and show up in review.
+>
+> When an item lands: append an outcome to the file, move it to
+> `~/.claude/unfinished/archive/`, drop its row from both indexes, and delete
+> the symlink. Update `~/.claude/unfinished/README.md` first — it is the one
+> that gets read.
 
 ## Open
 
