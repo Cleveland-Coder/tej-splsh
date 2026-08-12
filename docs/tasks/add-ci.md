@@ -65,16 +65,21 @@ against Next 16; a typecheck is optional given Vercel covers it today, but
 cheap and much faster. Recommend what you'd include and say why -- do not
 just mirror the pre-push hook.
 
-TOOLCHAIN GOTCHA -- GET THIS RIGHT:
+TOOLCHAIN (updated 2026-08-12 -- an earlier draft of this task was wrong here):
 
-Node and pnpm are pinned by VOLTA ("volta": { "node": "20.18.3", "pnpm":
-"10.5.2" }). GitHub Actions does NOT read volta pins, and there is no
-"packageManager" field for pnpm/action-setup to pick up either. So either pin
-both versions explicitly in the workflow, or add a "packageManager" field --
-and if you add one, make sure it agrees with the volta pin rather than
-silently drifting from it. pnpm-lock.yaml exists; install with a frozen
-lockfile so CI fails on a stale lock instead of quietly resolving something
-new.
+This was previously a trap: node and pnpm were pinned only by volta, which
+GitHub Actions ignores. PR #13 fixed it. package.json now has
+"packageManager": "pnpm@10.5.2" and "engines": { "node": "24.x" }, and there
+is a .nvmrc pinning 24.15.0. The volta block is gone.
+
+So pnpm/action-setup and actions/setup-node can both read real pins now --
+use them (setup-node's node-version-file: .nvmrc, and let pnpm/action-setup
+pick up packageManager). Do NOT hardcode versions in the workflow; that would
+reintroduce the drift #13 just removed. Verified 2026-08-12 that pnpm 10.5.2
+is now what actually runs locally.
+
+pnpm-lock.yaml exists; install with --frozen-lockfile so CI fails on a stale
+lock instead of quietly resolving something new.
 
 WHAT TO DO:
 
@@ -120,11 +125,8 @@ branch, not on main:
     build. Check WHICH check went red, or you will not have tested anything.
   - a TYPE error fails CI, if you chose to include a typecheck
   - a clean branch passes
-  - the CI log shows the intended node and pnpm versions. Note the volta pins
-    (node 20.18.3, pnpm 10.5.2) are NOT authoritative in practice: pnpm 10.8.1
-    was observed running locally on 2026-08-12, because volta does not manage
-    pnpm without VOLTA_FEATURE_PNPM. Decide what the real target is rather
-    than assuming the volta pin.
+  - the CI log shows node 24.x (per .nvmrc / engines) and pnpm 10.5.2 (per
+    packageManager), matching what runs locally
 
 Use `gh run watch` / `gh run view --log-failed` rather than guessing. Delete
 the scratch branch and any scratch files afterwards.
