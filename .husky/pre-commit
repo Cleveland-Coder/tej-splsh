@@ -1,0 +1,22 @@
+# Format and auto-fix staged files before they are committed.
+#
+# Runs the "lint-staged" block in package.json: prettier --write plus
+# eslint --fix on staged js/jsx/ts/tsx, prettier --write on staged
+# json/md/yml/yaml. Only staged files are touched, so this stays fast.
+#
+# Note that this REWRITES files during the commit -- what lands may differ
+# from what you staged. The pre-push hook remains the full-repo safety net;
+# this just keeps you from reaching it with fixable formatting.
+#
+# Bypass once with:  git commit --no-verify
+
+# The lint-staged block calls `eslint` directly, but this repo still has a
+# legacy .eslintrc.json and ESLint 9 refuses to read one without being told
+# to. `pnpm lint` doesn't need this because `next lint` sets the same compat
+# flag internally. Set it here rather than in package.json: lint-staged parses
+# its commands without a shell, so an inline "VAR=value cmd" prefix would be
+# read as a binary name. Drop this line once .eslintrc.json becomes a flat
+# eslint.config.mjs.
+export ESLINT_USE_FLAT_CONFIG=false
+
+pnpm lint-staged || exit 1
