@@ -3,9 +3,10 @@
 Written 2026-08-12, split out of the husky hook fixup. Paste the block below
 into a fresh Claude Code session started in `~/work/tej-splsh`.
 
-**Urgency:** not urgent, but it is a hard deadline. `next lint` still works
-silently on Next 15.2.4. It starts warning on 15.3 and is **removed in Next
-16** — so this must land before the Next 16 upgrade, not after.
+**Urgency:** raised 2026-08-12. The security upgrade to Next 15.5.23 (PR #16)
+means the deprecation warning is now **live on every lint and every push**, and
+build-time ESLint disappears at Next 16 — which currently is the only thing
+linting PRs. Still must land before the Next 16 upgrade, not after.
 
 ---
 
@@ -16,11 +17,21 @@ findings below were gathered on 2026-08-12 and may have drifted.
 
 BACKGROUND (verified 2026-08-12, re-verify before relying on it):
 
-- Next is 15.2.4. package.json "lint" is `next lint`. On this version there is
-  NO deprecation warning yet (verified by running it). The warning arrives in
-  15.3 and the command is removed in Next 16.
+- Next is 15.5.23 as of PR #16 (was 15.2.4 when this was written).
+  package.json "lint" is `next lint`, which NOW EMITS a deprecation warning on
+  every run -- warning only, exit code still 0. Removed entirely in Next 16.
 
-- eslint is 9.22.0, eslint-config-next is 15.2.4. Config is a LEGACY
+- Next ships an official codemod for exactly this migration. Try it FIRST
+  rather than hand-writing the config:
+      npx @next/codemod@canary next-lint-to-eslint-cli .
+  Review what it produces; do not accept it blindly.
+
+- `next build` currently runs ESLint as part of the build, which is how PRs
+  get linted at all (Vercel builds every PR). That goes away with `next lint`
+  in Next 16. Coordinate with docs/tasks/add-ci.md -- if CI is not running
+  lint by then, PRs silently stop being linted.
+
+- eslint is 9.22.0, eslint-config-next is 15.5.23. Config is a LEGACY
   .eslintrc.json:
       extends: ["next/core-web-vitals", "prettier"]
       plugins: ["prettier"]

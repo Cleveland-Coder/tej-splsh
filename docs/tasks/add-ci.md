@@ -3,9 +3,14 @@
 Written 2026-08-12, split out of the husky hook fixup. Paste the block below
 into a fresh Claude Code session started in `~/work/tej-splsh`.
 
-**Why it matters:** the pre-push hook is currently the _only_ enforcement of
-anything, and `git push --no-verify` skips it with nothing behind it. Separately,
-**nothing type-checks at all today** — see the gap called out below.
+**Why it matters:** `prettier --check` runs nowhere except the local pre-push
+hook, which `git push --no-verify` skips — so formatting has no server-side
+enforcement. And PR linting is currently borrowed from `next build`, which
+stops linting at Next 16.
+
+**Revised 2026-08-12.** The first draft claimed "nothing type-checks" and rated
+this High. That was wrong: Vercel builds every PR, and `next build` fails on
+both type and lint errors. The genuine gap is narrower — see below.
 
 ---
 
@@ -28,19 +33,37 @@ BACKGROUND (verified 2026-08-12, re-verify before relying on it):
   There is NO test script and NO test files anywhere in the repo. Do not
   invent a test job; there is nothing to run.
 
-THE REAL GAP -- NOT JUST PARITY WITH THE HOOK:
+WHAT VERCEL ALREADY COVERS (verified empirically 2026-08-12):
 
-Nothing type-checks. `next lint` does not type-check, and the pre-push hook
-only runs format:check and lint. tsconfig.json has "strict": true and
-"noEmit": true, and next.config.ts does NOT set typescript.ignoreBuildErrors
-or eslint.ignoreDuringBuilds -- so a type error is caught by `next build` and
-by nothing else. It can currently reach main unnoticed.
+Vercel builds EVERY pull request -- confirmed on PRs #15 and #16. And
+`next build` was tested directly: it fails on a type error AND on an ESLint
+error (tsconfig has "strict": true; next.config.ts sets neither
+typescript.ignoreBuildErrors nor eslint.ignoreDuringBuilds).
 
-So CI should be MORE than a mirror of the hook. Include a type check
-(`tsc --noEmit`, or `next build` if you'd rather have build coverage too).
-Decide which and tell me why. If you add a typecheck script to package.json,
-consider whether the pre-push hook should call it as well -- but weigh that
-against hook latency, which is currently ~4s and worth keeping snappy.
+So on PRs, Vercel already gives you: build + typecheck + lint. Do NOT
+rebuild that in CI. An earlier draft of this task claimed "nothing
+type-checks" -- that was wrong, and the CI job should not be justified on it.
+
+WHAT IS ACTUALLY MISSING:
+
+1. `prettier --check` runs NOWHERE except the local pre-push hook. Vercel's
+   build does not check formatting. `git push --no-verify` skips the hook, so
+   formatting has no server-side enforcement at all. This is the one real,
+   present gap.
+
+2. Lint coverage on PRs is BORROWED from `next build`, and it is temporary.
+   Build-time ESLint is tied to the same deprecated machinery as `next lint`
+   and goes away in Next 16. When the flat-config migration lands, PRs
+   silently STOP being linted unless CI is already running lint itself. Treat
+   this as the main forward-looking reason to do this task.
+
+3. Feedback speed. A full Vercel deploy is a slow way to learn you have a
+   type error.
+
+So scope CI accordingly: format:check is the must-have; lint is the hedge
+against Next 16; a typecheck is optional given Vercel covers it today, but
+cheap and much faster. Recommend what you'd include and say why -- do not
+just mirror the pre-push hook.
 
 TOOLCHAIN GOTCHA -- GET THIS RIGHT:
 
@@ -80,22 +103,28 @@ CONSTRAINTS:
   directly) so the migration does not break the workflow. Check whether it has
   landed before writing the job.
 
-ASK ME FIRST:
+ANSWERED 2026-08-12 (was: "where does this deploy?"):
 
-Where does this deploy? There is no vercel.json or netlify.toml in the repo,
-so hosting is presumably wired up in a dashboard. If Vercel (or similar) is
-already building every PR, part of this may be redundant -- confirm with me
-before duplicating a build that already runs.
+Vercel, wired up via the dashboard -- there is no vercel.json in the repo. It
+builds every PR and posts a required check. See the section above for exactly
+what that covers; the point of this task is the gap it does NOT cover, not
+duplicating it.
 
 TESTING -- do not skip, and do not claim success without it:
 
 Prove the workflow actually fails for each class of problem, on a scratch
 branch, not on main:
-  - a formatting violation fails CI
-  - a lint error fails CI (a rules-of-hooks violation in app/ works)
-  - a TYPE error fails CI -- this is the new coverage, so prove it explicitly
+  - a formatting violation fails CI -- this is the gap CI actually closes, so
+    prove this one explicitly
+  - a lint error fails CI from the CI job itself, not merely from Vercel's
+    build. Check WHICH check went red, or you will not have tested anything.
+  - a TYPE error fails CI, if you chose to include a typecheck
   - a clean branch passes
-  - the CI log shows node 20.18.3 and pnpm 10.5.2, matching the volta pins
+  - the CI log shows the intended node and pnpm versions. Note the volta pins
+    (node 20.18.3, pnpm 10.5.2) are NOT authoritative in practice: pnpm 10.8.1
+    was observed running locally on 2026-08-12, because volta does not manage
+    pnpm without VOLTA_FEATURE_PNPM. Decide what the real target is rather
+    than assuming the volta pin.
 
 Use `gh run watch` / `gh run view --log-failed` rather than guessing. Delete
 the scratch branch and any scratch files afterwards.
