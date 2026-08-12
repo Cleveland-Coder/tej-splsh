@@ -3,7 +3,7 @@
 Written 2026-08-12, split out of the husky hook fixup. Paste the block below
 into a fresh Claude Code session started in `~/work/tej-splsh`.
 
-**Urgency:** raised 2026-08-12. The security upgrade to Next 15.5.23 (PR #16)
+**Urgency:** raised 2026-08-12. The security upgrade to Next 15.5.23 (PR #14)
 means the deprecation warning is now **live on every lint and every push**, and
 build-time ESLint disappears at Next 16 — which currently is the only thing
 linting PRs. Still must land before the Next 16 upgrade, not after.
@@ -17,7 +17,7 @@ findings below were gathered on 2026-08-12 and may have drifted.
 
 BACKGROUND (verified 2026-08-12, re-verify before relying on it):
 
-- Next is 15.5.23 as of PR #16 (was 15.2.4 when this was written).
+- Next is 15.5.23 as of PR #14 (was 15.2.4 when this was written).
   package.json "lint" is `next lint`, which NOW EMITS a deprecation warning on
   every run -- warning only, exit code still 0. Removed entirely in Next 16.
 
