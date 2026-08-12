@@ -1,5 +1,31 @@
+# Signing enforcement, delegated to the global pre-push hook.
+#
+# Husky sets core.hooksPath=.husky/_ in this repo, and that overrides the
+# global core.hooksPath -- so ~/.config/git/hooks/pre-push, which refuses to
+# push unsigned commits, never runs here on its own. Delegate to it instead of
+# copying its logic, so the signing rules keep one source of truth.
+#
+# This must stay FIRST. Git feeds the ref lines ("<local ref> <local sha>
+# <remote ref> <remote sha>") on stdin, the global hook consumes them in a
+# while loop, and stdin can only be read once -- anything above this could eat
+# them and leave the signing check silently inspecting nothing. "$@" forwards
+# the remote name and URL that git passes as $1/$2; the global hook uses $1 to
+# decide which refs count as already published.
+#
+# Run through `sh` rather than executing it directly so a lost exec bit (fresh
+# machine, dotfiles checkout) doesn't quietly disable the check. A missing
+# global hook is not fatal: warn, and still run the checks below.
+
+global_pre_push="${XDG_CONFIG_HOME:-$HOME/.config}/git/hooks/pre-push"
+
+if [ -f "$global_pre_push" ]; then
+	sh "$global_pre_push" "$@" || exit 1
+else
+	echo "⚠️  No global pre-push hook at $global_pre_push - skipping signing check." >&2
+fi
+
 echo "🔍 Running format check..."
 pnpm format:check || exit 1
 
 echo "🔍 Running lint check..."
-pnpm lint || exit 1 
+pnpm lint || exit 1
