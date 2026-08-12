@@ -40,9 +40,12 @@ not rediscovered as bugs later.
   than duplicating its logic. If it is absent, the hook warns and skips the
   signing check rather than failing — so on a fresh machine, signing is not
   enforced until that file exists.
-- **The local node version does not match the repo's pins.** `.nvmrc` says
-  `24.15.0` and `engines` says `24.x`, but the shell's node is Homebrew's
-  (`/opt/homebrew/bin/node`, v26.4.0 as of 2026-08-12), so every pnpm command
-  prints `Unsupported engine`. Harmless today, but it means the pins are not
-  actually governing local builds — worth knowing before CI is built on the
-  assumption that they are.
+- **The node pins do work — but only in an interactive shell.** `.zshrc` runs
+  an nvm `load-nvmrc` hook on `chpwd`, so an interactive shell in this repo
+  correctly uses node `24.15.0`, matching `.nvmrc` and `engines` (verified
+  2026-08-12). Non-interactive shells — agent tooling, `sh -c`, some CI steps —
+  skip that hook and fall back to whatever node is on `PATH` (Homebrew's, node
+  26 on this machine), which prints `Unsupported engine` on every pnpm command.
+  The warning is a property of the calling shell, not of the repo. Don't
+  "fix" the pins because of it; if a non-interactive context needs the right
+  node, have it read `.nvmrc` explicitly.
