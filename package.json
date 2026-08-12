@@ -2,10 +2,10 @@
   "name": "nextjs",
   "version": "0.1.0",
   "private": true,
-  "volta": {
-    "node": "20.18.3",
-    "pnpm": "10.5.2"
+  "engines": {
+    "node": "24.x"
   },
+  "packageManager": "pnpm@10.5.2",
   "scripts": {
     "dev": "next dev --turbopack --port 1224 -H 0.0.0.0",
     "build": "next build",
@@ -29,7 +29,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "next": "15.2.4",
+    "next": "15.5.23",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -40,7 +40,7 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.22.0",
-    "eslint-config-next": "15.2.4",
+    "eslint-config-next": "15.5.23",
     "eslint-config-prettier": "^10.0.2",
     "eslint-plugin-prettier": "^5.2.3",
     "husky": "^9.1.7",
