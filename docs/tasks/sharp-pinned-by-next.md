@@ -1,5 +1,10 @@
 # Decision: `sharp` is behind its security fix, and Next pins it there
 
+**Status:** Blocked upstream — nothing to do until Next widens its range
+**Last verified:** 2026-08-12 — `sharp@0.34.5`; `next@15.5.23` declares
+`^0.34.3`; the one remaining Dependabot alert on `main`
+**Run from:** `~/work/tej-splsh`
+
 Written 2026-08-12, during the transitive-dependency patching in PR #17.
 
 **Recommendation: accept it for now, and recheck when Next is upgraded.** This

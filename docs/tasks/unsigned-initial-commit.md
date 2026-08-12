@@ -1,5 +1,10 @@
 # Decision: the unsigned initial commit (08a223c)
 
+**Status:** Awaiting a decision — recommendation is to close as won't-do
+**Last verified:** 2026-08-12 — `08a223c` unsigned, the only such commit in
+the whole history
+**Run from:** `~/work/tej-splsh`
+
 Written 2026-08-12, found during the husky hook fixup.
 
 **Recommendation: do nothing.** This is on the backlog to be _decided_ and

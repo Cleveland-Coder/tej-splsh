@@ -1,5 +1,10 @@
 # Prompt: migrate off `next lint` to eslint + flat config
 
+**Status:** Not started — top priority of the tej-splsh backlog
+**Last verified:** 2026-08-12 — Next 15.5.23 on `main`; `next lint` warns on
+every run but still exits 0; `.eslintrc.json` still legacy
+**Run from:** `~/work/tej-splsh`
+
 Written 2026-08-12, split out of the husky hook fixup. Paste the block below
 into a fresh Claude Code session started in `~/work/tej-splsh`.
 
