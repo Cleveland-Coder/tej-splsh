@@ -4,7 +4,6 @@
 **Tracked as:** GitHub issue #26
 **Last verified:** 2026-08-12 — `08a223c` unsigned, the only such commit in
 the whole history
-**Run from:** `~/work/tej-splsh`
 
 Written 2026-08-12, found during the husky hook fixup.
 
@@ -66,3 +65,10 @@ git push --no-verify <new-remote> main
 ```
 
 That is the intended escape hatch and costs nothing.
+
+## Cleanup
+
+This file is scaffolding, not permanent documentation. When issue #26 closes,
+**delete this file in the same PR**. When the last brief goes, delete the
+`docs/tasks/` directory with it — the issue tracker is the record, not this
+directory.

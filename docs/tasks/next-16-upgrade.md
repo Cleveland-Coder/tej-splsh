@@ -1,10 +1,9 @@
-# Prompt: upgrade Next.js 15.5.23 → 16.x
+# Upgrade Next.js 15.5.23 → 16.x
 
 **Status:** Not started — **blocked by** the flat-config migration
 **Tracked as:** GitHub issue #22 (blocked by #21)
 **Last verified:** 2026-08-13 — `next@16.3.1` is latest; needs React `^19.0.0`
 and node `>=20.9.0`, both of which this repo already satisfies
-**Run from:** `~/work/tej-splsh`
 
 Do **not** start this before the flat-config migration
 ([`eslint-flat-config-migration.md`](./eslint-flat-config-migration.md), issue
@@ -14,7 +13,7 @@ Do **not** start this before the flat-config migration
 ---
 
 ```
-Upgrade ~/work/tej-splsh from Next.js 15.5.23 to 16.x. Investigate before
+Upgrade this repo from Next.js 15.5.23 to 16.x. Investigate before
 changing anything -- the findings below were gathered on 2026-08-13 and may
 have drifted.
 
@@ -69,6 +68,12 @@ TESTING -- do not skip, and do not claim success without it:
   - Dependabot shows 0 open alerts
 
 Keep this a SEPARATE PR from the flat-config migration, so a failure is
-attributable to one or the other. Show me the diff and let me approve before
-committing. Do not push.
+attributable to one or the other. Open a PR for review rather than pushing to main.
 ```
+
+## Cleanup
+
+This file is scaffolding, not permanent documentation. When issue #22 closes,
+**delete this file in the same PR**. When the last brief goes, delete the
+`docs/tasks/` directory with it — the issue tracker is the record, not this
+directory.

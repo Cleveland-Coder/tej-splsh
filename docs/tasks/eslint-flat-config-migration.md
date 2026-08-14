@@ -1,13 +1,11 @@
-# Prompt: migrate off `next lint` to eslint + flat config
+# Migrate off `next lint` to eslint + flat config
 
 **Status:** Not started — top priority of the tej-splsh backlog
 **Tracked as:** GitHub issue #21 (blocks #22, the Next 16 upgrade)
 **Last verified:** 2026-08-12 — Next 15.5.23 on `main`; `next lint` warns on
 every run but still exits 0; `.eslintrc.json` still legacy
-**Run from:** `~/work/tej-splsh`
 
-Written 2026-08-12, split out of the husky hook fixup. Paste the block below
-into a fresh Claude Code session started in `~/work/tej-splsh`.
+Written 2026-08-12, split out of the husky hook fixup. The brief below is self-contained; run it from the repo root.
 
 **Urgency:** raised 2026-08-12. The security upgrade to Next 15.5.23 (PR #14)
 means the deprecation warning is now **live on every lint and every push**, and
@@ -17,7 +15,7 @@ linting PRs. Still must land before the Next 16 upgrade, not after.
 ---
 
 ```
-Migrate ~/work/tej-splsh off `next lint` to calling eslint directly, and move
+Migrate this repo off `next lint` to calling eslint directly, and move
 .eslintrc.json to flat config. Investigate before changing anything -- the
 findings below were gathered on 2026-08-12 and may have drifted.
 
@@ -92,7 +90,7 @@ CONSTRAINTS:
   either. Do not weaken it, and do not move enforcement to CI as part of this
   task.
 
-- .husky/pre-push also delegates commit-signing enforcement to my global hook
+- .husky/pre-push also delegates commit-signing enforcement to a global hook outside this repo
   and must keep passing stdin/argv through. Do not reorder or disturb that
   block; it has to stay first in the file.
 
@@ -109,6 +107,13 @@ TESTING -- do not skip, and do not claim success without it:
     env-var line is removed, and still blocks a commit on an unfixable error
   - a push still runs both checks and still blocks on failure
 
-Delete every scratch file you create. Show me the diff and let me approve
-before committing. Do not push.
+Delete every scratch file you create. Open a PR for review rather than
+pushing to main.
 ```
+
+## Cleanup
+
+This file is scaffolding, not permanent documentation. When issue #21 closes,
+**delete this file in the same PR**. When the last brief goes, delete the
+`docs/tasks/` directory with it — the issue tracker is the record, not this
+directory.

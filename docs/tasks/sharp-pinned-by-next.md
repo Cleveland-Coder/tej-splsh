@@ -5,7 +5,6 @@
 (Next 16 declares `sharp: ^0.35.3`); verify rather than assume
 **Last verified:** 2026-08-12 — `sharp@0.34.5`; `next@15.5.23` declares
 `^0.34.3`; the one remaining Dependabot alert on `main`
-**Run from:** `~/work/tej-splsh`
 
 Written 2026-08-12, during the transitive-dependency patching in PR #17.
 
@@ -49,3 +48,10 @@ by itself with no override needed.
 
 Only add an explicit override if Vercel starts blocking the deploy on it, or if
 the app ever gains a server-rendered image path.
+
+## Cleanup
+
+This file is scaffolding, not permanent documentation. When issue #25 closes,
+**delete this file in the same PR**. When the last brief goes, delete the
+`docs/tasks/` directory with it — the issue tracker is the record, not this
+directory.
