@@ -107,10 +107,11 @@ CONSTRAINTS:
   touch the signing-delegation block at the top of .husky/pre-push; it must
   stay first in the file and keep receiving stdin.
 
-- Coordinate with docs/tasks/eslint-flat-config-migration.md. If that has not
-  landed yet, CI must invoke `pnpm lint` (not `eslint` or `next lint`
-  directly) so the migration does not break the workflow. Check whether it has
-  landed before writing the job.
+- The flat-config migration (issue #21) has landed: `pnpm lint` is now
+  `eslint .` over a flat `eslint.config.mjs`, and it lints the whole repo
+  rather than just the source directories. CI should still invoke `pnpm lint`
+  rather than `eslint` directly, so the script stays the single definition of
+  what linting means here.
 
 ANSWERED 2026-08-12 (was: "where does this deploy?"):
 

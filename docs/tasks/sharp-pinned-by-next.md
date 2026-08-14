@@ -41,10 +41,10 @@ content`). There is no server doing image optimization at request time.
 
 ## What to do, and when
 
-Recheck when Next is next upgraded — most likely as part of
-[the flat-config migration](./eslint-flat-config-migration.md) and the Next 16
-work that follows it. If a newer Next widens its range to `^0.35`, this closes
-by itself with no override needed.
+Recheck when Next is next upgraded — most likely as part of the Next 16 work
+(issue #22). The flat-config migration (issue #21) has landed and did not move
+Next off 15.5.23, so it changed nothing here. If a newer Next widens its range
+to `^0.35`, this closes by itself with no override needed.
 
 Only add an explicit override if Vercel starts blocking the deploy on it, or if
 the app ever gains a server-rendered image path.
