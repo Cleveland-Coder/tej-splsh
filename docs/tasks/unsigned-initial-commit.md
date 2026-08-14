@@ -1,6 +1,7 @@
 # Decision: the unsigned initial commit (08a223c)
 
 **Status:** Awaiting a decision — recommendation is to close as won't-do
+**Tracked as:** GitHub issue #26
 **Last verified:** 2026-08-12 — `08a223c` unsigned, the only such commit in
 the whole history
 **Run from:** `~/work/tej-splsh`
