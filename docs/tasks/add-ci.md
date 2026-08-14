@@ -1,13 +1,11 @@
-# Prompt: add CI to tej-splsh
+# Add CI to tej-splsh
 
 **Status:** Not started
 **Tracked as:** GitHub issue #24
 **Last verified:** 2026-08-12 — no `.github/`; Vercel builds every PR and
 already covers build, typecheck and lint; `format:check` is the gap
-**Run from:** `~/work/tej-splsh`
 
-Written 2026-08-12, split out of the husky hook fixup. Paste the block below
-into a fresh Claude Code session started in `~/work/tej-splsh`.
+Written 2026-08-12, split out of the husky hook fixup. The brief below is self-contained; run it from the repo root.
 
 **Why it matters:** `prettier --check` runs nowhere except the local pre-push
 hook, which `git push --no-verify` skips — so formatting has no server-side
@@ -21,7 +19,7 @@ both type and lint errors. The genuine gap is narrower — see below.
 ---
 
 ```
-Add CI to ~/work/tej-splsh. Investigate before changing anything -- the
+Add CI to this repo. Investigate before changing anything -- the
 findings below were gathered on 2026-08-12 and may have drifted.
 
 BACKGROUND (verified 2026-08-12, re-verify before relying on it):
@@ -137,5 +135,12 @@ branch, not on main:
 Use `gh run watch` / `gh run view --log-failed` rather than guessing. Delete
 the scratch branch and any scratch files afterwards.
 
-Show me the diff and let me approve before committing. Do not push.
+Open a PR for review rather than pushing to main.
 ```
+
+## Cleanup
+
+This file is scaffolding, not permanent documentation. When issue #24 closes,
+**delete this file in the same PR**. When the last brief goes, delete the
+`docs/tasks/` directory with it — the issue tracker is the record, not this
+directory.
