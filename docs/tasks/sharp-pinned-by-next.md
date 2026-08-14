@@ -1,6 +1,7 @@
 # Decision: `sharp` is behind its security fix, and Next pins it there
 
-**Status:** Blocked upstream — should resolve itself via GitHub issue #22
+**Status:** Blocked upstream — should resolve itself via #22
+**Tracked as:** GitHub issue #25
 (Next 16 declares `sharp: ^0.35.3`); verify rather than assume
 **Last verified:** 2026-08-12 — `sharp@0.34.5`; `next@15.5.23` declares
 `^0.34.3`; the one remaining Dependabot alert on `main`

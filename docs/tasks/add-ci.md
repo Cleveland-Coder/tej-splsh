@@ -1,6 +1,7 @@
 # Prompt: add CI to tej-splsh
 
 **Status:** Not started
+**Tracked as:** GitHub issue #24
 **Last verified:** 2026-08-12 — no `.github/`; Vercel builds every PR and
 already covers build, typecheck and lint; `format:check` is the gap
 **Run from:** `~/work/tej-splsh`
