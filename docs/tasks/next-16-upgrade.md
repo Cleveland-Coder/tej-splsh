@@ -5,10 +5,16 @@
 **Last verified:** 2026-08-13 — `next@16.3.1` is latest; needs React `^19.0.0`
 and node `>=20.9.0`, both of which this repo already satisfies
 
-Do **not** start this before the flat-config migration
-([`eslint-flat-config-migration.md`](./eslint-flat-config-migration.md), issue
-#21) has landed. Next 16 removes `next lint`, which the `lint` script and
-`.husky/pre-push` both depend on.
+Do **not** start this before the flat-config migration (issue #21) has landed.
+Next 16 removes `next lint`, which the `lint` script and `.husky/pre-push` both
+depend on.
+
+**Update:** #21 landed. The `lint` script is now `eslint .`, driven by a flat
+`eslint.config.mjs`. That config reaches `next/core-web-vitals` through
+`FlatCompat`, because `eslint-config-next` only ships flat entry points from 16
+onward — so part of this upgrade is dropping the compat layer and importing
+`eslint-config-next/core-web-vitals` (and `eslint-config-next/typescript`)
+directly, then removing the `@eslint/eslintrc` devDependency.
 
 ---
 
