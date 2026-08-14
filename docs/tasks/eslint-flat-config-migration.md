@@ -1,6 +1,7 @@
 # Prompt: migrate off `next lint` to eslint + flat config
 
 **Status:** Not started — top priority of the tej-splsh backlog
+**Tracked as:** GitHub issue #21 (blocks #22, the Next 16 upgrade)
 **Last verified:** 2026-08-12 — Next 15.5.23 on `main`; `next lint` warns on
 every run but still exits 0; `.eslintrc.json` still legacy
 **Run from:** `~/work/tej-splsh`
