@@ -2,15 +2,17 @@
 
 **Status:** Not started
 **Tracked as:** GitHub issue #24
-**Last verified:** 2026-08-12 — no `.github/`; Vercel builds every PR and
-already covers build, typecheck and lint; `format:check` is the gap
+**Last verified:** 2026-08-14 — no `.github/`; Vercel builds every PR and
+covers build and typecheck. **Lint is no longer among them:** the Next 16
+upgrade (#22) landed and `next build` no longer runs ESLint, so `pnpm lint`
+and `format:check` are both now unenforced outside the local pre-push hook.
 
 Written 2026-08-12, split out of the husky hook fixup. The brief below is self-contained; run it from the repo root.
 
 **Why it matters:** `prettier --check` runs nowhere except the local pre-push
 hook, which `git push --no-verify` skips — so formatting has no server-side
-enforcement. And PR linting is currently borrowed from `next build`, which
-stops linting at Next 16.
+enforcement. As of the Next 16 upgrade the same is now true of `pnpm lint`:
+PR linting used to be borrowed from `next build`, and Next 16 removed it.
 
 **Revised 2026-08-12.** The first draft claimed "nothing type-checks" and rated
 this High. That was wrong: Vercel builds every PR, and `next build` fails on
@@ -37,37 +39,41 @@ BACKGROUND (verified 2026-08-12, re-verify before relying on it):
   There is NO test script and NO test files anywhere in the repo. Do not
   invent a test job; there is nothing to run.
 
-WHAT VERCEL ALREADY COVERS (verified empirically 2026-08-12):
+WHAT VERCEL ALREADY COVERS (updated 2026-08-14, after the Next 16 upgrade):
 
-Vercel builds EVERY pull request -- confirmed on PRs #15 and #16. And
-`next build` was tested directly: it fails on a type error AND on an ESLint
-error (tsconfig has "strict": true; next.config.ts sets neither
-typescript.ignoreBuildErrors nor eslint.ignoreDuringBuilds).
+Vercel builds EVERY pull request -- confirmed on PRs #15 and #16. `next build`
+still fails on a type error (tsconfig has "strict": true; next.config.ts does
+not set typescript.ignoreBuildErrors).
 
-So on PRs, Vercel already gives you: build + typecheck + lint. Do NOT
-rebuild that in CI. An earlier draft of this task claimed "nothing
+It NO LONGER fails on an ESLint error. Next 16 removed build-time linting
+along with `next lint`, and removed the `eslint` next.config option
+entirely -- verified 2026-08-14: `pnpm lint` reports 3 warnings that the
+Next 16 `next build` output no longer mentions at all.
+
+So on PRs, Vercel now gives you: build + typecheck, and NOT lint. Do NOT
+rebuild build/typecheck in CI. An earlier draft of this task claimed "nothing
 type-checks" -- that was wrong, and the CI job should not be justified on it.
 
 WHAT IS ACTUALLY MISSING:
 
 1. `prettier --check` runs NOWHERE except the local pre-push hook. Vercel's
    build does not check formatting. `git push --no-verify` skips the hook, so
-   formatting has no server-side enforcement at all. This is the one real,
-   present gap.
+   formatting has no server-side enforcement at all.
 
-2. Lint coverage on PRs is BORROWED from `next build`, and it is temporary.
-   Build-time ESLint is tied to the same deprecated machinery as `next lint`
-   and goes away in Next 16. When the flat-config migration lands, PRs
-   silently STOP being linted unless CI is already running lint itself. Treat
-   this as the main forward-looking reason to do this task.
+2. `pnpm lint` is now in exactly the same position. Lint coverage on PRs used
+   to be BORROWED from `next build`; the Next 16 upgrade (#22) removed
+   build-time ESLint, so as of 2026-08-14 PRs are silently unlinted. This is
+   no longer a forward-looking risk -- it is a present gap, and it is the
+   change that raised this task's priority.
 
 3. Feedback speed. A full Vercel deploy is a slow way to learn you have a
    type error.
 
-So scope CI accordingly: format:check is the must-have; lint is the hedge
-against Next 16; a typecheck is optional given Vercel covers it today, but
-cheap and much faster. Recommend what you'd include and say why -- do not
-just mirror the pre-push hook.
+So scope CI accordingly: format:check and lint are BOTH must-haves now, for
+the same reason -- neither runs anywhere but a bypassable local hook. A
+typecheck is optional given Vercel still covers it, but cheap and much
+faster. Recommend what you'd include and say why -- do not just mirror the
+pre-push hook.
 
 TOOLCHAIN (updated 2026-08-12 -- an earlier draft of this task was wrong here):
 
@@ -107,11 +113,18 @@ CONSTRAINTS:
   touch the signing-delegation block at the top of .husky/pre-push; it must
   stay first in the file and keep receiving stdin.
 
-- The flat-config migration (issue #21) has landed: `pnpm lint` is now
-  `eslint .` over a flat `eslint.config.mjs`, and it lints the whole repo
+- The flat-config migration (issue #21) and the Next 16 upgrade (issue #22)
+  have both landed: `pnpm lint` is now `eslint .` over a flat
+  `eslint.config.mjs` that imports `eslint-config-next/core-web-vitals` and
+  `eslint-config-next/typescript` directly, and it lints the whole repo
   rather than just the source directories. CI should still invoke `pnpm lint`
   rather than `eslint` directly, so the script stays the single definition of
   what linting means here.
+
+- `pnpm lint` currently exits 0 with 3 pre-existing `jsx-a11y/alt-text`
+  warnings in app/page.tsx (false positives -- alt comes in via a spread).
+  Do NOT add `--max-warnings=0` without fixing or scoping those first, or the
+  very first CI run goes red on unrelated pre-existing noise.
 
 ANSWERED 2026-08-12 (was: "where does this deploy?"):
 

@@ -3,12 +3,7 @@ import Script from 'next/script';
 export default function BeholdWidget() {
   return (
     <>
-      <div
-        // @ts-ignore - Custom element not recognized by TypeScript
-        className="mt-6"
-        feed-id="nrEWtNFUgeiPALmBAtLZ"
-        is="behold-widget"
-      />
+      <div className="mt-6" feed-id="nrEWtNFUgeiPALmBAtLZ" is="behold-widget" />
       <Script
         dangerouslySetInnerHTML={{
           __html: `

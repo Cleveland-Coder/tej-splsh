@@ -1,5 +1,3 @@
-import { THEME } from '~/constants/theme';
-
 /**
  * Tailwind utility classes for the Logo component
  */
