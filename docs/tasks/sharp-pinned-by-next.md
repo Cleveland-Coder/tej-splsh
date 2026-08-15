@@ -1,10 +1,13 @@
 # Decision: `sharp` is behind its security fix, and Next pins it there
 
-**Status:** Blocked upstream — should resolve itself via #22
+**Status:** RESOLVED by the Next 16 upgrade (#22) — safe to close #25
 **Tracked as:** GitHub issue #25
-(Next 16 declares `sharp: ^0.35.3`); verify rather than assume
-**Last verified:** 2026-08-12 — `sharp@0.34.5`; `next@15.5.23` declares
-`^0.34.3`; the one remaining Dependabot alert on `main`
+**Last verified:** 2026-08-14 — `next@16.3.1` declares `sharp: ^0.35.3` and the
+tree now resolves `sharp@0.35.3`, at or above the `>= 0.35.0` the advisory
+requires. No `pnpm.overrides` entry was needed. Confirm the Dependabot alert
+has cleared, then close #25 and delete this file.
+
+Everything below is the pre-upgrade analysis, kept only until #25 closes.
 
 Written 2026-08-12, during the transitive-dependency patching in PR #17.
 
@@ -41,10 +44,10 @@ content`). There is no server doing image optimization at request time.
 
 ## What to do, and when
 
-Recheck when Next is next upgraded — most likely as part of the Next 16 work
-(issue #22). The flat-config migration (issue #21) has landed and did not move
-Next off 15.5.23, so it changed nothing here. If a newer Next widens its range
-to `^0.35`, this closes by itself with no override needed.
+This is what happened: the Next 16 upgrade (issue #22) landed on 2026-08-14
+and moved Next to `16.3.1`, which declares `sharp: ^0.35.3`. `sharp` resolved
+straight to `0.35.3` and the advisory range no longer applies — no override
+needed, exactly as predicted.
 
 Only add an explicit override if Vercel starts blocking the deploy on it, or if
 the app ever gains a server-rendered image path.
