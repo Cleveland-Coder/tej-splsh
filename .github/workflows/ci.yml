@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# A newer push to the same branch makes the in-flight run irrelevant.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: format, lint, typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # No `version:` — action-setup reads `packageManager` from package.json,
+      # and setup-node reads .nvmrc. Hardcoding either here would reintroduce
+      # the drift PR #13 removed.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Report toolchain
+        run: |
+          echo "node    $(node --version)"
+          echo "pnpm    $(pnpm --version)"
+
+      - name: Install
+        id: install
+        run: pnpm install --frozen-lockfile
+
+      # Each check runs even after an earlier one fails, so a single run
+      # reports all three rather than making you fix and re-push to find the
+      # next problem. They are skipped if the install itself failed, since
+      # every one of them would then fail for the same uninteresting reason.
+      - name: Format check
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: pnpm format:check
+
+      - name: Lint
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: pnpm lint
+
+      - name: Typecheck
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: pnpm typecheck
