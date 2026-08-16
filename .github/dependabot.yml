@@ -1,0 +1,14 @@
+version: 2
+
+# Scope is deliberately github-actions only. Major tags (`@v5`) float within a
+# major, so patches and minors already arrive for free — what never happens on
+# its own is v5 -> v6, and that is what this catches.
+#
+# No `npm` entry on purpose: Dependabot security alerts already cover the
+# dangerous cases (see #31 for where `pnpm audit` and Dependabot disagree), and
+# on a maintenance-mode splash page routine bump PRs are noise, not signal.
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
