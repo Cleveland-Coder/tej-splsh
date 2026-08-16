@@ -19,7 +19,7 @@ jobs:
     name: format, lint, typecheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       # No `version:` — action-setup reads `packageManager` from package.json,
       # and setup-node reads .nvmrc. Hardcoding either here would reintroduce
