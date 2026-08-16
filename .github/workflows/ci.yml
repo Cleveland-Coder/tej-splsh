@@ -19,14 +19,16 @@ jobs:
     name: format, lint, typecheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       # No `version:` — action-setup reads `packageManager` from package.json,
       # and setup-node reads .nvmrc. Hardcoding either here would reintroduce
       # the drift PR #13 removed.
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v5
+      # `cache: pnpm` is the explicit input and still supports pnpm. Only the
+      # automatic `package-manager-cache` path was narrowed to npm in v6.
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: pnpm
