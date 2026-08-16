@@ -12,3 +12,10 @@ updates:
     directory: '/'
     schedule:
       interval: 'monthly'
+    # One PR per month for the whole workflow, not one per action. The first
+    # run opened three separate PRs (#43-#45); on a workflow this small that
+    # is three CI runs and three reviews of the same decision.
+    groups:
+      github-actions:
+        patterns:
+          - '*'
