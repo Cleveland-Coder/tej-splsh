@@ -30,7 +30,7 @@ function Home() {
             <h1 className="text-4xl font-bold">{INTRO_TITLE}</h1>
             <p className="text-lg mt-4">{INTRO_COPY}&hellip;</p>
           </div>
-          <Image {...IMAGE_PROPS[0]} className="mt-6 mx-auto" />
+          <Image {...IMAGE_PROPS[0]} alt={IMAGE_PROPS[0].alt} className="mt-6 mx-auto" />
           <div className="text-left">
             {BODY_COPY.slice(0, 2).map((copy, index) => (
               <p key={index} className="mt-6">
@@ -38,7 +38,7 @@ function Home() {
               </p>
             ))}
           </div>
-          <Image {...IMAGE_PROPS[1]} className="mt-6 mx-auto" />
+          <Image {...IMAGE_PROPS[1]} alt={IMAGE_PROPS[1].alt} className="mt-6 mx-auto" />
           <div className="text-left">
             {BODY_COPY.slice(2).map((copy, index) => (
               <p key={index} className="mt-6">
@@ -55,7 +55,7 @@ function Home() {
       <footer>
         <Container className="max-w-[600px]">
           <BeholdWidget />
-          <Image {...IMAGE_PROPS[2]} className="mt-12 mx-auto" />
+          <Image {...IMAGE_PROPS[2]} alt={IMAGE_PROPS[2].alt} className="mt-12 mx-auto" />
           <div className="my-12">
             <div>Tiny Erica Jewelry, Cleveland, OH</div>
             <br /> <div>Copyright {new Date().getFullYear()}, Tiny Erica Jewelry</div>
