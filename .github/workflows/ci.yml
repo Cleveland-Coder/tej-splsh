@@ -24,7 +24,7 @@ jobs:
       # No `version:` — action-setup reads `packageManager` from package.json,
       # and setup-node reads .nvmrc. Hardcoding either here would reintroduce
       # the drift PR #13 removed.
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
       - uses: actions/setup-node@v5
         with:
