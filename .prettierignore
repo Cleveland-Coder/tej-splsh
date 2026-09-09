@@ -3,3 +3,8 @@
 # of formatting churn and fails format:check (blocking the pre-push hook)
 # until someone remembers to run `pnpm format`.
 pnpm-lock.yaml
+
+# .claude/ holds an untracked settings.local.json (hidden from git via
+# .git/info/exclude). Prettier honors .prettierignore but not info/exclude, so
+# without this line format:check walks and fails on that file, blocking pushes.
+.claude/
