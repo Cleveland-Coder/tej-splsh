@@ -13,6 +13,7 @@ export const AI_CRAWLERS = [
   // Meta
   'meta-externalagent',
   'meta-externalfetcher',
+  'meta-webindexer',
   'FacebookBot',
   // OpenAI
   'GPTBot',
