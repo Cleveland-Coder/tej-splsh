@@ -6,6 +6,9 @@ import { SITE } from '~constants/site';
 import { THEME } from '~constants/theme';
 
 export const metadata: Metadata = {
+  // Absolute base for file-based metadata such as app/opengraph-image.jpg;
+  // without it, og:image resolves against localhost.
+  metadataBase: new URL(SITE.url),
   title: SITE.title,
   description: SITE.description,
   keywords: SITE.keywords.join(', '),
